@@ -8,9 +8,7 @@ interface AnotherProps {
 }
 
 const Carrossel: React.FC<AnotherProps> = ({ slideName, children }) => {
-
     let buttons: any[] = []
-    
     let divsCount = 0
     
     children.forEach(e => {
@@ -38,34 +36,77 @@ const Carrossel: React.FC<AnotherProps> = ({ slideName, children }) => {
     )
 }
 
+let buttons = ['header__option', 'header__dropdown', 'dropdown__link']
+const actived = 'drop_actived'
+
+document.body.addEventListener('click', (event: Event) => {
+    const result = buttons.some(obj => obj === event.target.classList[0])
+    result == false && document.querySelector('.drop_actived') ? document.querySelector('.drop_actived').classList.remove(actived) : null
+})
+
 function passSlide(event: Event, param: number) {
     let target = event.target
     let element =  document.getElementById(`${target.id}`)
     let classEl = 'controlls__btn--selected'
 
-    try {
-        event.target.classList[1].includes(classEl)
-    } catch {
+    try { event.target.classList[1].includes(classEl) }
+    catch {
         element.querySelector(`.${classEl}`).classList.remove(classEl)
         event.target.classList.add(classEl)
         element.querySelector('#carrossel__slider').style.transform = `translatex(-${target.getAttribute('count') * 1}00%)`
     }
 }
 
+setTimeout(() => {
+    document.querySelectorAll('.dropdown').forEach(obj => {
+        obj.addEventListener('click', (params: Event) => {
+            const drop = document.querySelector('.drop_actived')
+            const aims = params.currentTarget
+            if (drop == null) aims.classList.add(actived) 
+            else if (aims.classList.contains(actived)) drop.classList.remove(actived)
+            else drop.classList.remove(actived), aims.classList.add(actived)
+        })
+    }) 
+}, 100);
+
 export default function Home() { return (<>
 <header>
     <img className="header__logo" src="./dm-logo-name.svg" alt="Data Machina" />
     <nav>
-        <div><a href="#inicio">data machina</a></div>
-        <div className="nav__active">
-            <a href="#mapalytics">mapalytics</a>
+        <div className="dropdown">
+            <a className="dropdown__link" href="#inicio">data machina</a>
+            <div className="header__dropdown">
+                <a className="header__option" href="#inicio">início</a>
+                <a className="header__option" href="#solucoes">soluções</a>
+                <a className="header__option" href="#clientes">clientes</a>
+                <a className="header__option" href="#premios">prêmios</a>
+                <a className="header__option" href="#aceleracoes">acelerações</a>
+                <a className="header__option" href="#contato">contato</a>
+            </div>
+        </div>
+        {/* drop_actived */}
+
+        <div className="dropdown">
+            <a className="dropdown__link" href="#mapalytics">mapalytics</a>
+            <div className="header__dropdown">
+                <a className="header__option" href="#apresentacao">apresentação</a>
+                <a className="header__option" href="#oquee">o que é o mapalytics</a>
+                <a className="header__option" href="#segmentos">segmentos atendidos</a>
+                <a className="header__option" href="#pacotes">pacotes e funcionalidades</a>
+                <a className="header__option" href="#peca">peça uma demonstração</a>
+                <a className="header__option" href="#material">material para empresas</a>
+                <a className="header__option" href="#contato">contato</a>
+            </div>
         </div>
     </nav>
 </header>
 <main>
+    
     {/* BANNER */}
+    
     <section className="banner">
-        <div className="banner__container" id="inicio">
+        <div className="link__ancor" id="apresentacao"></div>
+        <div className="banner__container">
             <div className="banner__texts">
                 <div>
                     <h1>
@@ -97,6 +138,7 @@ export default function Home() { return (<>
     </section>
     
     <Carrossel slideName="firstOne">
+        <div className="link__ancor" id="oquee"></div>
         <section className="mapalytics">
             <div className="mapalytics__container--1">
                 <div className="mapalytics__texts">
@@ -145,7 +187,6 @@ export default function Home() { return (<>
         </section>
     </Carrossel>
     
-
     <Carrossel slideName="secondOne">
         {/* 1 */}
         
@@ -192,6 +233,7 @@ export default function Home() { return (<>
         {/* 3 */}
 
         <div className="slide__container">
+            <div className="link__ancor" id="segmentos"></div>
             <div className="alimentacao">
                 <div className="alimentacao__container--2">
                     <div className="text__container">
@@ -254,6 +296,7 @@ export default function Home() { return (<>
         </div>
 
         <Carrossel slideName="thirdOne">
+            <div className="link__ancor" id="pacotes"></div>
             <div className="basico__column-2">
                 <div className="text__container">
                     <p className="basico__title title">
@@ -338,6 +381,7 @@ export default function Home() { return (<>
     {/* FORMULÁRIO */}
 
     <section className="forms">
+        <div className="link__ancor" id="peca"></div>
         <div className="forms__container">
             <div className="forms__column--1">
                 <div className="text__container">
@@ -352,27 +396,22 @@ export default function Home() { return (<>
                 <p className="forms__seta">→</p>
             </div>
             <div className="forms__formulario">
-
                 <div className="forms__formulario--content">
                     <input type="text" placeholder="Digite aqui"/>
                     <input type="text" placeholder="Digite aqui"/>
                     <input type="text" placeholder="Digite aqui"/>
                     <input type="text" placeholder="Digite aqui"/>
                     <input type="text" placeholder="Digite aqui"/>
+                    <button className="btn__rosa">enviar</button>
                 </div>
             </div>
         </div>
     </section>
 
-    {/*  */}
+    {/* CONTATO */}
 
-    <section className="">
-        <div className=""></div>
-    </section>
-
-    {/* */}
-
-    <div className="tenha-acesso-container">
+    <div className="contato">
+        <div className="link__ancor" id="material"></div>
         <div className="manda title">
             Tenha acesso ao nosso material para empresas <br /> clicando
             abaixo!
@@ -382,11 +421,14 @@ export default function Home() { return (<>
             <div className="mais__arrow">↓</div>
         </a>
     </div>
-    {/* */}
-    <div className="contato">
-        <div className="contato__conhecer">
-            <div className="contato__quer">
-                <p className="melhor">Quer nos conhecer melhor?</p>
+
+    {/* CONHECER */}
+    
+    <div className="conhecer">
+        <div className="link__ancor" id="contato"></div>
+        <div className="conhecer__melhor">
+            <div className="conhecer__quer">
+                <p>Quer nos conhecer melhor?</p>
                 <div className="manda title">
                     Manda um e-mail <br /> pra gente
                 </div>
@@ -397,7 +439,9 @@ export default function Home() { return (<>
             </div>
         </div>
     </div>
-    {/* */}
+
+    {/* FOOTER */}
+    
     <footer>
         <div className="footer__container">
             <img className="footer__logo" src="./dm-logo-name.svg" alt="" />

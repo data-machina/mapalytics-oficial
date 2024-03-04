@@ -1,3 +1,5 @@
+'use client'
+
 import './datamachina.css';
 
 export default function Home() {
@@ -6,20 +8,20 @@ export default function Home() {
 		<div className="banner" id="inicio">
 		 	<div className='banner__container'>
 				<div className="banner__texts">
-								<h1> <em>/</em> Gostamos <br /> de problemas <br /> difíceis!</h1>
-								<p className="banner-p-2">Somos pesquisadores e empreendedores com cultura de inovação aplicada,
-									prototipação e ruptura de paradigmas, somos curiosos, dedicados e disruptivos.</p>
-							</div> 
-				
-							{/* Vídeo */}
-				
-							 <iframe
-								className="iframe-banner" src="https://www.youtube.com/embed/bQjCKkZRVbA"
-								title="Uma nova Data Machina"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
+					<h1> <em>/</em> Gostamos <br /> de problemas <br /> difíceis!</h1>
+					<p>
+						Somos pesquisadores e empreendedores com cultura de inovação aplicada,
+						prototipação e ruptura de paradigmas, somos curiosos, dedicados e disruptivos.
+					</p>
+				</div> 
+
+				{/* Vídeo */}
+
+				<iframe
+					className="banner__iframe" src="https://www.youtube.com/embed/bQjCKkZRVbA"
+					title="Uma nova Data Machina"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				></iframe>
 			</div>
 		</div>
 	
@@ -117,9 +119,13 @@ export default function Home() {
 			</div>
 		</span>
 
-		<div className="nossas-solucoes" id="nossas-solucoes">
-			Nossas soluções já ajudaram várias <br />
-			empresas e queremos ajudar muitas mais
+		<div className='solucoes'>
+			<div className="nossas-solucoes" id="nossas-solucoes">
+				<p className='title'>
+					Nossas soluções já ajudaram várias <br />
+					empresas e queremos ajudar muitas mais
+				</p>
+			</div>
 		</div>
 		
 		<div className="marcas">
@@ -214,22 +220,23 @@ export default function Home() {
 		</div>
 
 		<div className="premio" id="premio">
-			<div className="video-premio">
-
-				<iframe
-                    className="iframe-premio"
-                    src="https://www.youtube.com/embed/Mt3nyO5tUs4"
-					title="YouTube video player" 
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				></iframe>
-			</div>
-			<div className="logo-premio">
-				<p className="title">
-					Muito trabalho só <br /> poderia resultar em <br /> reconhecimento
-				</p>
-				<img src="datamachina/img/top100.svg" alt="top100" />
-				<p className="p-premio">Fomos reconhecidos no Prêmio 100 Open Startups pelo 2º ano consecutivo. Dessa vez fomos eleitos a 3ª melhor citytech de 2022.</p>
-
+			<div className='premio__container'>
+				<div className="video-premio">
+					<iframe
+						className="iframe-premio"
+						src="https://www.youtube.com/embed/Mt3nyO5tUs4"
+						title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					></iframe>
+				</div>
+				<div className="logo-premio">
+					<p className="title">
+						Muito trabalho só <br /> poderia resultar em <br /> reconhecimento
+					</p>
+					<img src="datamachina/img/top100.svg" alt="top100" />
+				
+					<p className="p-premio">Fomos reconhecidos no Prêmio 100 Open Startups pelo 2º ano consecutivo. Dessa vez fomos eleitos a 3ª melhor citytech de 2022.</p>
+				</div>
 			</div>
 		</div>
 
@@ -237,28 +244,25 @@ export default function Home() {
 			<p className='title'>Vários programas de aceleração nos ajudaram a <br /> aprimorar nossos produtos</p>
 		</div>
 
-		<div className="clientes" id="clientes">
-			<div className="clientes-container">
-				<a href="http://adesampa.com.br/" target="black">
-                    <img src="datamachina/logos/adesampa.png" />
-                </a>
-				<a href="https://www.inovativabrasil.com.br/" target="black">
-                    <img src="datamachina/logos/inovabrasil.png" />
-                </a>
-				<a href="https://www.capital.sp.gov.br/" target="black">
-                    <img src="datamachina/logos/prefeituradesp.svg" />
-                </a>
-				<a href="https://vedacit.com.br/" target="black">
-                    <img src="datamachina/logos/vedacitlabs.png" />
-                </a>
-				<a href="https://softex.br/" target="black">
-                    <img src="datamachina/logos/softex.png" />
-                </a>
-				<a href="https://www.gov.br/startuppoint/pt-br/programas/ia2-mctic" target="black">
-                    <img
-						src="datamachina/logos/ia2.png" />
-                    </a>
-			</div>
+		<div className="marcas" id="clientes">
+			<a href="http://adesampa.com.br/" target="black">
+				<img src="datamachina/logos/adesampa.png" />
+			</a>
+			<a href="https://www.inovativabrasil.com.br/" target="black">
+				<img src="datamachina/logos/inovabrasil.png" />
+			</a>
+			<a href="https://www.capital.sp.gov.br/" target="black">
+				<img src="datamachina/logos/prefeituradesp.svg" />
+			</a>
+			<a href="https://vedacit.com.br/" target="black">
+				<img src="datamachina/logos/vedacitlabs.png" />
+			</a>
+			<a href="https://softex.br/" target="black">
+				<img src="datamachina/logos/softex.png" />
+			</a>
+			<a href="https://www.gov.br/startuppoint/pt-br/programas/ia2-mctic" target="black">
+				<img src="datamachina/logos/ia2.png" />
+			</a>
 		</div>
 
 		<div className="conhecer" id="contato">

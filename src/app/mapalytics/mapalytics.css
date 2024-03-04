@@ -663,7 +663,6 @@ input[type="email"],
 	.banner__container {
 		margin: 0 var(--margins) 0 var(--margins);
 	}
-
 }
 
 @media screen and (max-width: 1000px) {

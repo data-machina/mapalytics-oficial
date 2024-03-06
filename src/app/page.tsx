@@ -1,13 +1,50 @@
 'use client'
-
 import './datamachina.css';
+
+/* setTimeout(() => {
+	document.head.innerHTML += '<title>Data Machina</title>'
+	document.head.innerHTML += `
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KW48QX9');</script>
+		<!-- End Google Tag Manager -->
+	`
+
+	document.body.innerHTML += `
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW48QX9"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	`
+}, 200); */
 
 export default function Home() {
     return(<>
 
-		<div className="banner" id="inicio">
-		 	<div className='banner__container'>
-				<div className="banner__texts">
+
+		{/* Bootstrap */}
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		></link>
+
+
+
+
+
+
+
+
+
+
+		<div className="dm-banner" id="inicio">
+		 	<div className='dm-banner__container'>
+				<div className="dm-banner__texts">
 					<h1> <em>/</em> Gostamos <br /> de problemas <br /> difíceis!</h1>
 					<p>
 						Somos pesquisadores e empreendedores com cultura de inovação aplicada,
@@ -38,8 +75,8 @@ export default function Home() {
 
 				<div className="descricao-1">
 					<div className="container-data-machina">
-						<p className="titulo-1">dm mapalytics</p>
-						<p className="titulo-2">
+						<p className="dm-titulo-1">dm mapalytics</p>
+						<p className="dm-titulo-2">
 							Para empresas de varejo que querem conhecer melhor sua rede de atuação ou para
 							empresas de seguros e assistências técnicas que querem mapear oportunidades e prestadores de
 							serviço. <br /> O painel DM Mapalytics consegue agregar dados públicos e sociodemográficos com os dados da
@@ -74,8 +111,8 @@ export default function Home() {
 				</div>
 				<div className="descricao">
 					<div className="container-data-machina">
-						<p className="titulo-1">dm log</p>
-						<p className="titulo-2">Criamos um painel de distribuição de cargas e roteirização de entregas voltado para
+						<p className="dm-titulo-1">dm log</p>
+						<p className="dm-titulo-2">Criamos um painel de distribuição de cargas e roteirização de entregas voltado para
 							empresas com dores diárias no seu processo de logística, seja com frota própria ou terceirizada.
 							Através do painel é possível subir entregas agendadas e distribuir automaticamente os pedidos em
 							veículos cadastrados.
@@ -96,7 +133,7 @@ export default function Home() {
 				<div className="descricao-1">
 					<div className="container-data-machina">
 						<p className="titulo-3">dm leads</p>
-						<p className="titulo-4">Nosso produto de leads é uma API que se integra a plataformas de gestão de
+						<p className="dm-titulo-4">Nosso produto de leads é uma API que se integra a plataformas de gestão de
 							leads levando uma seleção de contatos qualificados e ranqueados de acordo com o perfil dos seus
 							clientes já existentes. Analisamos seus clientes para indicar leads similares e validamos os
 							contatos por CNPJ, CNAE, informações demográficas e validação visual do endereço cadastrado
@@ -286,5 +323,11 @@ export default function Home() {
 				</div>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+			integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+			crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+			crossorigin="anonymous"></script>
     </>)
 }

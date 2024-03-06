@@ -1,4 +1,4 @@
-.banner {
+.dm-banner {
     position: relative;
     background-image: url("../../public/datamachina/img/elementos/background.png");
     background-size: 100vw;
@@ -8,7 +8,7 @@
     background-position: bottom;
 }
 
-.banner__container {
+.dm-banner__container {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     align-items: center;
@@ -38,7 +38,7 @@
     z-index: 0;
 }
 
-.banner__texts {
+.dm-banner__texts {
     display: flex;
     align-items: center;
     align-items: flex-start;
@@ -316,15 +316,15 @@ h1 em {
     width: 85%;
 }
 
-.titulo-1,
-.titulo-3 {
+.dm-titulo-1,
+.dm-titulo-3 {
     font-size: 34px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-.titulo-2,
-.titulo-4 {
+.dm-titulo-2,
+.dm-titulo-4 {
     font-weight: 100;
     font-size: 21px;
     line-height: 30px;
@@ -332,8 +332,8 @@ h1 em {
     width: 100%;
 }
 
-.titulo-2 strong,
-.titulo-4 strong {
+.dm-titulo-2 strong,
+.dm-titulo-4 strong {
     font-weight: 600;
 }
 
@@ -681,14 +681,10 @@ input[type="email"],
     font-size: 14px;
 }
 
-.links {
-    color: #7a7a7a;
-}
-
 @media only screen and (max-width: 1700px) {
 
-    .titulo-2,
-    .titulo-4 {
+    .dm-titulo-2,
+    .dm-titulo-4 {
         font-size: 16px;
         line-height: 24px;
     }
@@ -730,15 +726,15 @@ input[type="email"],
         font-size: 22px;
     }
 
-    .titulo-1,
-    .titulo-3 {
+    .dm-titulo-1,
+    .dm-titulo-3 {
         font-size: 30px;
         font-weight: 600;
         margin-bottom: 20px;
     }
 
-    .titulo-2,
-    .titulo-4 {
+    .dm-titulo-2,
+    .dm-titulo-4 {
         font-size: 14px;
         line-height: 22px;
     }
@@ -866,13 +862,13 @@ input[type="email"],
 
     /* Banner */
 
-    .banner__container {
+    .dm-banner__container {
         display: flex;
         flex-direction: column;
         width: calc(100% - 40px);
     }
 
-    .banner {
+    .dm-banner {
         background-size: cover;
         height: initial;
         min-height: 600px;
@@ -942,8 +938,8 @@ input[type="email"],
         padding: 0 20px;
     }
 
-    .titulo-2,
-    .titulo-4 {
+    .dm-titulo-2,
+    .dm-titulo-4 {
         font-size: 14px;
         line-height: 22px;
         max-height: max-content;
@@ -975,7 +971,7 @@ input[type="email"],
         justify-content: center;
     }
 
-    .banner {
+    .dm-banner {
         gap: 0px;
     }
 
@@ -1081,8 +1077,8 @@ input[type="email"],
         color: var(--dm_creme_02);
     }
 
-    .titulo-1,
-    .titulo-3 {
+    .dm-titulo-1,
+    .dm-titulo-3 {
         font-size: 26px;
         text-align: center;
         width: 100%;

@@ -1,5 +1,6 @@
 'use client';
 import "./mapalytics.css";
+import Image from 'next/image'
 
 interface AnotherProps {
     slideName: string; // Define custom prop types here
@@ -9,8 +10,8 @@ interface AnotherProps {
 const Carrossel: React.FC<AnotherProps> = ({ slideName, children }) => {
     let buttons: any[] = []
     let divsCount = 0
-    
-    children.forEach(e => {
+    if(children != null && children != undefined) children.forEach(() => {
+
         buttons.push(
             <button
                 id={slideName}
@@ -47,6 +48,7 @@ function passSlide(event: Event, param: number) {
         element.querySelector('#carrossel__slider').style.transform = `translatex(-${target.getAttribute('count') * 1}00%)`
     }
 }
+
 
 
 export default function Home() { return (<>
@@ -88,6 +90,7 @@ export default function Home() { return (<>
         </div>
     </section>
     
+    {/* <Carrossel slideName={{name: "firstOne", buttons: 2}}> */}
     <Carrossel slideName="firstOne">
         <section className="mapalytics">
             <div className="link__ancor" id="oquee"></div>
@@ -144,7 +147,10 @@ export default function Home() { return (<>
         <div className="slide__container">
             <div className="alimentacao">
                 <div className="alimentacao__container--1">
-                    <img className="alimentacao__animation" src="./animation-1.png" alt=""/>
+                    <div>
+                        <video className="alimentacao__animation" src="/alimentacao.mp4" autoPlay muted loop></video>
+                    </div>
+
                     <div className="text__container">
                         <p className="title">
                             Vai bem para <span>alimentação</span>
@@ -171,12 +177,9 @@ export default function Home() { return (<>
                              O Mapalytics ajuda a encontrar edifícios em construção que podem ser leads para o seu negócio. O que garante agilidade e facilidade para mapear futuros novos clientes e atender novas áreas.
                         </p>
                     </div>
-                    <img
-                        className="alimentacao__animation"
-                        src="./map.jpg"
-                        alt=""
-                    />
-                  
+                    <div>
+                        <video className="alimentacao__animation" src="/construcao-civil.mp4" autoPlay muted loop></video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,11 +198,9 @@ export default function Home() { return (<>
                             Você faz parte de uma seguradora de automóveis, produtos eletrônicos e seguro residencial? <span className="forms__text--rosa">Tem dificuldade de gerir sua rede de parceiros e acompanhar performances?</span> <br /> O Mapalytics ajuda a entender os territórios onde seus parceiros atuam tanto para prever sinistros quanto para projetar sua rede de assistência.
                         </p>
                     </div>
-                    <img
-                        className="alimentacao__animation"
-                        src="./animation-3.png"
-                        alt=""
-                    />
+                    <div>
+                        <video className="alimentacao__animation" src="/assistencia-tecnica.mp4" autoPlay muted loop></video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,18 +219,13 @@ export default function Home() { return (<>
                                 Precisa entender porque algumas lojas vendem melhor que outras?</span> Com big data e o cruzamento dos dados internos da sua empresa é possível prever vendas e perfis de compra, comparar lojas, avaliar o desempenho de lojas de acordo com a localidade e sugerir pontos para abertura de novas lojas.
                         </p>
                     </div>
-                    <img
-                        className="alimentacao__animation"
-                        src="./animation-4.png"
-                        alt=""
-                    />
-                
+                    <div>
+                        <video className="alimentacao__animation" src="/varejo__video.mp4" autoPlay muted loop></video>
+                    </div>
                 </div>
             </div>
         </div>
     </Carrossel>
-
-
 
     {/* CARROSSEL */}
     
@@ -247,8 +243,8 @@ export default function Home() { return (<>
         </div>
 
         <Carrossel slideName="thirdOne">
-            <div className="link__ancor" id="pacotes"></div>
             <div className="basico__column-2">
+                <div className="link__ancor" id="pacotes"></div>
                 <div className="text__container">
                     <p className="basico__title title">
                         Mapalytics <span className="title">Básico</span>
@@ -287,7 +283,7 @@ export default function Home() { return (<>
                     <p>
                         Com o Mapalytics sua empresa consegue visualizar no mapa a lista de CNPJs por CNAE na proximidade. Podendo identificar potenciais clientes ou concorrentes e várias informações do negócio. Entendendo demandas específicas do seu setor e transformando conhecimento em estratégia de negócio e muito mais.
                     </p>
-                    <button className="btn__white">Contratar</button>
+                    <button className="btn__white btn__white--pink">Contratar</button>
                 </div>
                 <div className="text__text">
                     <p className="basico__list--title">O que você irá encontrar:</p>

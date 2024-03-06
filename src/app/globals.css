@@ -47,12 +47,12 @@ body {
 	padding-top: 100px;
 	margin: 0;
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	background: var(--dm_preto_00);
+	background: var(--dm_preto_00) !important;
 	scroll-behavior: smooth;
 }
 
 a {
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 .width {
@@ -337,6 +337,7 @@ footer {
 .first {
 	font-weight: 600;
 	color: var(--dm_creme_02);
+	text-decoration: none;
 }
 
 .footer__link {
@@ -397,6 +398,7 @@ footer {
 
 .links {
 	color: #7a7a7a;
+	text-decoration: none;
 }
 
 .footer__mapalytics {
@@ -411,7 +413,7 @@ footer {
 .footer__mapalytics::after {
 	content: '';
 	position: absolute;
-	top: -15px;
+	top: -20px;
 	z-index: 1;
 	left: 0;
 	background: var(--dm_rosa_00);

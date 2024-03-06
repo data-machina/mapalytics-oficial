@@ -41,6 +41,7 @@
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
+    text-shadow: 1px 1px 3px var(--dm_rosa_00);
 }
 
 h1 {
@@ -81,7 +82,7 @@ h1 {
 	position: absolute;
 	height: 640px;
     right: -120px;
-	bottom: -100px;
+	top: 260px;
 }
 
 /* Mapalytics */
@@ -192,7 +193,7 @@ h2 {
 
 .alimentacao__white {
 	height: 100%;
-	background: var(--dm_creme_02);
+	background: #FAF6F0;
 }
 
 .alimentacao__container--1, .alimentacao__container--2 {
@@ -354,6 +355,11 @@ h2 {
 	z-index: 2;
 }
 
+.btn__white--pink {
+	background: var(--dm_rosa_00);
+	color: var(--dm_creme_02);
+}
+
 .btn__white:hover {
 	background: #dad4ce;
 	transition: .2s;
@@ -372,11 +378,6 @@ h2 {
 	gap: 14px;
 }
 
-.basico__list--check__white .basico__item::before {
-	background: none;
-	color: var(--dm_creme_02);
-}
-
 .basico__list--check__black .basico__item::before {
 	color: var(--dm_preto_00);
 }
@@ -390,13 +391,13 @@ h2 {
 }
 
 .basico__item::before {
-	content: '✓';
+	content: '';
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: var(--dm_creme_02);
 	position: absolute;
-	background-image: url('../../../public/icones/check.svg');
+	background-image: url('../../../public/icones/check__white.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -405,6 +406,10 @@ h2 {
 	height: 16px;
 	left: -28px;
 	z-index: 1;
+}
+
+.background__white .basico__item::before { 
+	background-image: url('../../../public/icones/check.svg');
 }
 
 .basico__item--first {

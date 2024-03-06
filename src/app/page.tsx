@@ -24,7 +24,6 @@ import './datamachina.css';
 export default function Home() {
     return(<>
 
-
 		{/* Bootstrap */}
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -67,11 +66,11 @@ export default function Home() {
 			<p className='title' >Nossa inquietude nos leva a propor soluções para <br /> o dia-a-dia com tecnologias de fronteira</p>
 		</div>
 
-		<span className="container-soluctions">
+		<span className="produtos">
 
 			{/* <!-- 1 -- > */}
 			
-			<div className="unidade-de-negocio-1" id="Mapalytics">
+			<div className="produtos__negocio--1" id="Mapalytics">
 
 				<div className="descricao-1">
 					<div className="container-data-machina">
@@ -84,9 +83,9 @@ export default function Home() {
 							as áreas de novas oportunidades. Além de trazer os dados históricos através de business intelligence
 							para dar total domínio estratégico e tático para seus planos de crescimento.
 						</p>
-						<a className="saiba-mais-3 dm_mapalytics" href="/pdfs/dm_mapalytics.pdf" target="_blank">
+						<a className="produtos__saiba-mais--3 dm_mapalytics" href="/pdfs/dm_mapalytics.pdf" target="_blank">
 							Saiba mais
-							<div className="ir-3">
+							<div className="produtos__ir">
 								↓
 							</div>
 						</a>
@@ -99,61 +98,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			
-			{/* <!-- 2 --> */}
-			
-			<div className="unidade-de-negocio" id="Logística">
-				<div className="contorno">
-					<img className="gif-animado" src="/datamachina/img/Log-Atualizado.gif" alt="gif animado" />
-					<div className="unidade-footer-1 unidade-footer">
-						<img src="/datamachina/img/logbranco.svg" />
-					</div>
-				</div>
-				<div className="descricao">
-					<div className="container-data-machina">
-						<p className="dm-titulo-1">dm log</p>
-						<p className="dm-titulo-2">Criamos um painel de distribuição de cargas e roteirização de entregas voltado para
-							empresas com dores diárias no seu processo de logística, seja com frota própria ou terceirizada.
-							Através do painel é possível subir entregas agendadas e distribuir automaticamente os pedidos em
-							veículos cadastrados.
-						</p>
-						<a href="/pdfs/dm_log.pdf" target="_blank">
-							<div className="saiba-mais-1 dm_logistica" >
-								Saiba mais
-								<div className="ir-1">
-									↓
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-			{/* <!-- 3 --> */}
-			<div className="unidade-de-negocio-1 " id="Leads">
-				<div className="descricao-1">
-					<div className="container-data-machina">
-						<p className="titulo-3">dm leads</p>
-						<p className="dm-titulo-4">Nosso produto de leads é uma API que se integra a plataformas de gestão de
-							leads levando uma seleção de contatos qualificados e ranqueados de acordo com o perfil dos seus
-							clientes já existentes. Analisamos seus clientes para indicar leads similares e validamos os
-							contatos por CNPJ, CNAE, informações demográficas e validação visual do endereço cadastrado
-							através de visão computacional. O objetivo é aumentar as taxas de retorno das equipes de venda e
-							trazer mais clientes para o seu negócio.</p>
-						<a className="saiba-mais-2 dm_leads" id="saiba-mais-2" href="/pdfs/dm_leads.pdf" target="_blank">
-							Saiba mais
-							<div className="ir-2" id="ir-2">
-								↓
-							</div>
-						</a>
-					</div>
-				</div>
-				<div className="contorno">
-					<img className="gif-animado" src="/datamachina/img/Leads-Atualizado_1.gif" alt="" />
-					<div className="unidade-footer-2 unidade-footer">
-						<img src="/datamachina/img/leadsbranco.svg" />
-					</div>
-				</div>
-			</div>
+
 		</span>
 
 		<div className='solucoes'>

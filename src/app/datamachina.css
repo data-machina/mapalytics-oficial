@@ -89,7 +89,7 @@ h1 em {
     padding: 0 20px;
 }
 
-.unidade-de-negocio {
+.produtos__negocio {
     display: grid;
     grid-template-columns: 0.8fr 1fr;
     align-items: center;
@@ -97,7 +97,7 @@ h1 em {
     color: var(--dm_creme_02);
 }
 
-.unidade-de-negocio-1 {
+.produtos__negocio--1 {
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 0.8fr;
@@ -122,9 +122,9 @@ h1 em {
     object-fit: cover;
 }
 
-.saiba-mais-1,
-.saiba-mais-2,
-.saiba-mais-3 {
+.produtos__saiba-mais--1,
+.produtos__saiba-mais--2,
+.produtos__saiba-mais--3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -139,9 +139,7 @@ h1 em {
     padding-left: 42px;
 }
 
-.ir-1,
-.ir-2,
-.ir-3 {
+.produtos__ir {
     width: 45px;
     height: 45px;
     display: flex;
@@ -151,110 +149,47 @@ h1 em {
     transition: 0.3s;
 }
 
-.saiba-mais-1,
-.saiba-mais-2,
-.saiba-mais-3 {
+
+.produtos__saiba-mais--3 {
     border-style: solid;
     border-width: 1px 0 1px 1px;
     transition: 0.3s;
-
-}
-
-.saiba-mais-1 {
-    border-color: var(--dm_laranja_00);
-}
-
-.saiba-mais-2 {
-    border-color: var(--dm_verde_00);
-}
-
-.saiba-mais-3 {
     border-color: var(--dm_rosa_00);
 }
 
-.saiba-mais-1:hover,
-.saiba-mais-2:hover,
-.saiba-mais-3:hover {
+.produtos__saiba-mais--3:hover {
     transition: 0.3s;
     border-width: 1px 0 1px 1px;
-}
-
-.saiba-mais-1:hover {
-    border-color: var(--dm_laranja_00);
-    background: var(--dm_laranja_00);
-}
-
-.saiba-mais-2:hover {
-    border-color: var(--dm_verde_00);
-    background: var(--dm_verde_00);
-}
-
-.saiba-mais-3:hover {
     border-color: var(--dm_rosa_00);
     background: var(--dm_rosa_00);
 }
 
-.saiba-mais-1 .ir-1,
-.saiba-mais-2 .ir-2,
-.saiba-mais-3 .ir-3 {
+.produtos__saiba-mais--3 .produtos__ir {
     border: 1px solid transparent;
 }
 
-.saiba-mais-1:hover .ir-1,
-.saiba-mais-2:hover .ir-2,
-.saiba-mais-3:hover .ir-3 {
+.produtos__saiba-mais--3:hover .produtos__ir {
     transition: 0.3s;
     background: var(--dm_preto_00);
     border-width: 1px;
     border-style: solid;
-}
-
-.saiba-mais-1:hover .ir-1 {
-    border-color: var(--dm_laranja_00);
-}
-
-.saiba-mais-2:hover .ir-2 {
-    border-color: var(--dm_verde_00);
-}
-
-.saiba-mais-3:hover .ir-3 {
     border-color: var(--dm_rosa_00);
 }
 
-.ir-1,
-.ir-2,
-.ir-3 {
+.produtos__ir {
     border: var(--dm_preto_00);
     transition: 0.3s;
 }
 
-.ir-1 {
-    background: var(--dm_laranja_00);
-}
-
-.ir-2 {
-    background: var(--dm_verde_00);
-}
-
-.ir-3 {
+.produtos__ir {
     background: var(--dm_rosa_00);
 }
 
-.ir-1:hover,
-.ir-2:hover,
-.ir-3:hover {
+.produtos__ir:hover {
     border: 1px solid;
 }
 
-.ir-1:hover {
-    border-color: var(--dm_laranja_00);
-}
-
-.ir-2:hover {
-    border-color: var(--dm_verde_00);
-}
-
-.ir-3:hover {
+.produtos__ir:hover {
     border-color: var(--dm_rosa_00);
 }
 
@@ -692,7 +627,7 @@ input[type="email"],
 
 @media only screen and (max-width: 1475px) {
 
-    .container-soluctions {
+    .produtos {
         display: block;
         margin: 50px 0;
     }
@@ -808,9 +743,9 @@ input[type="email"],
         margin: 10px;
     }
 
-    .saiba-mais-1,
-    .saiba-mais-2,
-    .saiba-mais-3 {
+    .produtos__saiba-mais--1,
+    .produtos__saiba-mais--2,
+    .produtos__saiba-mais--3 {
         background: none;
         height: 35px;
         width: 136px;
@@ -823,7 +758,7 @@ input[type="email"],
 
     .ir-1,
     .ir-2,
-    .ir-3 {
+    .produtos__ir {
         width: 35px;
         height: 35px;
         right: -35px;
@@ -1064,14 +999,14 @@ input[type="email"],
         margin: auto;
     }
 
-    .unidade-de-negocio {
+    .produtos__negocio {
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
         color: var(--dm_creme_02);
     }
 
-    .unidade-de-negocio-1 {
+    .produtos__negocio--1 {
         grid-template-columns: 1fr;
         min-height: 600px;
         color: var(--dm_creme_02);
@@ -1183,7 +1118,7 @@ input[type="email"],
         font-size: 14px;
     }
 
-    .container-soluctions {
+    .produtos {
         margin: 0;
     }
 

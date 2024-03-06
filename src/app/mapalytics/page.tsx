@@ -2,54 +2,49 @@
 import "./mapalytics.css";
 import Image from 'next/image'
 
-interface AnotherProps {
-    slideName: string; // Define custom prop types here
-    children: React.ReactNode; // Include this if you explicitly need to type `children`
+const Carrossel= ({children}) => { return (
+    <>
+        { children }
+    </>
+)}
+
+function passSlide(event: Event) {
+    let idComponent = event.currentTarget.getAttribute('id-button')
+    let id = document.getElementById(idComponent)
+    let slide = id.querySelector('#carrossel__slider')
+    const classCSS = 'controlls__btn--selected'
+
+    slide.style.transform = `translateX(-${event.currentTarget.getAttribute('count')}00%)`
+    id.querySelector(`.${classCSS}`).classList.remove(classCSS)
+    event.currentTarget.classList.add(classCSS)
 }
 
-const Carrossel: React.FC<AnotherProps> = ({ slideName, children }) => {
-    let buttons: any[] = []
-    let divsCount = 0
-    if(children != null && children != undefined) children.forEach(() => {
+console.clear()
 
-        buttons.push(
-            <button
-                id={slideName}
-                count={divsCount}
-                className={`controlls__btn ${divsCount == 0 ? 'controlls__btn--selected' : ''}`}
-                onClick={()=> passSlide(event)}
-            ></button>
-        )
+setTimeout(() => {
+    const carro = document.querySelectorAll('.carrossel__component')
+
+    carro.forEach(obj => {
+        let div = document.createElement('div')
+        div.setAttribute('class', 'controlls')
+
+        for (let i = 0; i < obj.querySelector('#carrossel__slider').childNodes.length; i++) {
+            div.innerHTML += `
+                <button
+                    count="${i}"
+                    id-button="${obj.getAttribute('id')}"
+                    class="controlls__btn ${i == 0 ? 'controlls__btn--selected' : null}"
+                >
+                </button>`
+        }
+
+        obj.appendChild(div)
         
-        divsCount = divsCount + 1
-    });
-
-    return (
-        <div className="carrossel__component" id={slideName}>
-            <div className="controlls">
-                { buttons }
-            </div>
-            <div id="carrossel__slider">
-                { children }
-            </div>
-        </div>
-    )
-}
-
-function passSlide(event: Event, param: number) {
-    let target = event.target
-    let element =  document.getElementById(`${target.id}`)
-    let classEl = 'controlls__btn--selected'
-
-    try { event.target.classList[1].includes(classEl) }
-    catch {
-        element.querySelector(`.${classEl}`).classList.remove(classEl)
-        event.target.classList.add(classEl)
-        element.querySelector('#carrossel__slider').style.transform = `translatex(-${target.getAttribute('count') * 1}00%)`
-    }
-}
-
-
+        div.childNodes.forEach(filho => {
+            filho.addEventListener('click', passSlide)
+        })
+    })
+}, 500);
 
 export default function Home() { return (<>
 
@@ -90,137 +85,145 @@ export default function Home() { return (<>
         </div>
     </section>
     
-    {/* <Carrossel slideName={{name: "firstOne", buttons: 2}}> */}
-    <Carrossel slideName="firstOne">
-        <section className="mapalytics">
-            <div className="link__ancor" id="oquee"></div>
-            <div className="mapalytics__container--1">
-                <div className="mapalytics__texts">
-                    <h2>O que é o Mapalytics?</h2>
-                    <p className="titulo-2">
-                        O Mapalytics é um painel web de geomarketing que combina dados de
-                        fontes públicas para ajudar seu negócio a encontrar novos leads e
-                        oportunidades de venda em qualquer lugar do Brasil.
-                    </p>
-                    <p>
-                        Com dados sociodemográficos é possível encontrar seu perfil de
-                        cliente no mapa e encontrar áreas propícias para expandir o seu
-                        negócio.
-                    </p>
-                </div>
-                
-                <div className="container__video--1">
-                    <div className="mapalytics__video--1">
-                        <video className="mapalytics__video--ctn-1" loop muted autoPlay>
-                            <source src="./video__mapa.mp4" type="video/mp4" />
-                        </video>
+    <Carrossel>
+        <div className="carrossel__component" id="firstOne">
+            <div id="carrossel__slider">
+                    
+                <section className="mapalytics">
+                    <div className="link__ancor" id="oquee"></div>
+                    <div className="mapalytics__container--1">
+                        <div className="mapalytics__texts">
+                            <h2>O que é o Mapalytics?</h2>
+                            <p className="titulo-2">
+                                O Mapalytics é um painel web de geomarketing que combina dados de
+                                fontes públicas para ajudar seu negócio a encontrar novos leads e
+                                oportunidades de venda em qualquer lugar do Brasil.
+                            </p>
+                            <p>
+                                Com dados sociodemográficos é possível encontrar seu perfil de
+                                cliente no mapa e encontrar áreas propícias para expandir o seu
+                                negócio.
+                            </p>
+                        </div>
+                        
+                        <div className="container__video--1">
+                            <div className="mapalytics__video--1">
+                             <video className="mapalytics__video--ctn-1" loop muted autoPlay>
+                                    <source src="./video__mapa.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section className="mapalytics">
+                </section>
+                <section className="mapalytics">
 
-            <div className="container__video--2">
-                <div className="mapalytics__video--2">
-                    <video className="mapalytics__video--ctn-2" loop muted autoPlay>
-                        <source src="./video__mapa--2.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <span></span>
-            </div>
+                    <div className="container__video--2">
+                        <div className="mapalytics__video--2">
+                         <video className="mapalytics__video--ctn-2" loop muted autoPlay>
+                                <source src="./video__mapa--2.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <span></span>
+                    </div>
 
-            <div className="mapalytics__container--2">
-                <span></span>
-                <div className="mapalytics__texts">
-                    <h2>Inteligência artificial para tomada de decisão</h2>
-                    <p className="titulo-2">
-                        O Mapalytics não é só um painel de visualização, mas de inteligência. Nossas funcionalidades contam com algoritmos de aprendizado de máquina para indicar oportunidades de vendas, prever vendas futuras, comparar desempenhos por região e identificar os melhores locais para expansão.
-                    </p>
-                </div>
+                    <div className="mapalytics__container--2">
+                        <span></span>
+                        <div className="mapalytics__texts">
+                            <h2>Inteligência artificial para tomada de decisão</h2>
+                            <p className="titulo-2">
+                                O Mapalytics não é só um painel de visualização, mas de inteligência. Nossas funcionalidades contam com algoritmos de aprendizado de máquina para indicar oportunidades de vendas, prever vendas futuras, comparar desempenhos por região e identificar os melhores locais para expansão.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                
             </div>
-        </section>
+        </div>
     </Carrossel>
     
-    <Carrossel slideName="secondOne">
-        {/* 1 */}
-        
-        <div className="slide__container">
-            <div className="alimentacao">
-                <div className="alimentacao__container--1">
-                    <div>
-                        <video className="alimentacao__animation" src="/alimentacao.mp4" autoPlay muted loop></video>
-                    </div>
+    <Carrossel>
+        <div className="carrossel__component" id="secondOne">
+            <div id="carrossel__slider">
+                {/* 1 */}
+                
+                <div className="slide__container">
+                    <div className="alimentacao">
+                        <div className="alimentacao__container--1">
+                            <div>
+                                <video className="alimentacao__animation" src="/alimentacao.mp4" autoPlay muted loop></video>
+                            </div>
 
-                    <div className="text__container">
-                        <p className="title">
-                            Vai bem para <span>alimentação</span>
-                        </p>
-                        <p className="alimentacao__description">
-                            Você faz parte da indústria e comércio que abastece restaurantes, dark kitchens, hotéis e todo o setor de alimentação? <span className="forms__text--rosa"> Tem dificuldade de encontrar e qualificar novos leads na sua máquina de vendas?</span> O Mapalytics pode te ajudar a encontrar leads na base da Receita Federal e no Google e qualificar os resultados para ganhar tempo e expandir sua cartela de clientes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {/* 2 */}
-
-        <div className="slide__container">
-            <div className="alimentacao alimentacao__white">
-                <div className="alimentacao__container--2">
-                    <div className="text__container">
-                        <p className="title">
-                            Vai bem para <span>construção civil</span>
-                        </p>
-                        <p className="alimentacao__description">
-                            <span className="forms__text--rosa">Precisa mapear obras e construções no Brasil?</span> <br />
-                             O Mapalytics ajuda a encontrar edifícios em construção que podem ser leads para o seu negócio. O que garante agilidade e facilidade para mapear futuros novos clientes e atender novas áreas.
-                        </p>
-                    </div>
-                    <div>
-                        <video className="alimentacao__animation" src="/construcao-civil.mp4" autoPlay muted loop></video>
+                            <div className="text__container">
+                                <p className="title">
+                                    Vai bem para <span>alimentação</span>
+                                </p>
+                                <p className="alimentacao__description">
+                                    Você faz parte da indústria e comércio que abastece restaurantes, dark kitchens, hotéis e todo o setor de alimentação? <span className="forms__text--rosa"> Tem dificuldade de encontrar e qualificar novos leads na sua máquina de vendas?</span> O Mapalytics pode te ajudar a encontrar leads na base da Receita Federal e no Google e qualificar os resultados para ganhar tempo e expandir sua cartela de clientes.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        {/* 3 */}
+                {/* 2 */}
 
-        <div className="slide__container">
-            <div className="link__ancor" id="segmentos"></div>
-            <div className="alimentacao">
-                <div className="alimentacao__container--2">
-                    <div className="text__container">
-                        <p className="title">
-                            Vai bem para <span>assistências técnicas</span>
-                        </p>
-                        <p className="alimentacao__description">
-                            Você faz parte de uma seguradora de automóveis, produtos eletrônicos e seguro residencial? <span className="forms__text--rosa">Tem dificuldade de gerir sua rede de parceiros e acompanhar performances?</span> <br /> O Mapalytics ajuda a entender os territórios onde seus parceiros atuam tanto para prever sinistros quanto para projetar sua rede de assistência.
-                        </p>
-                    </div>
-                    <div>
-                        <video className="alimentacao__animation" src="/assistencia-tecnica.mp4" autoPlay muted loop></video>
+                <div className="slide__container">
+                    <div className="alimentacao alimentacao__white">
+                        <div className="alimentacao__container--2">
+                            <div className="text__container">
+                                <p className="title">
+                                    Vai bem para <span>construção civil</span>
+                                </p>
+                                <p className="alimentacao__description">
+                                    <span className="forms__text--rosa">Precisa mapear obras e construções no Brasil?</span> <br />
+                                    O Mapalytics ajuda a encontrar edifícios em construção que podem ser leads para o seu negócio. O que garante agilidade e facilidade para mapear futuros novos clientes e atender novas áreas.
+                                </p>
+                            </div>
+                            <div>
+                                <video className="alimentacao__animation" src="/construcao-civil.mp4" autoPlay muted loop></video>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        {/* 4 */}
+                {/* 3 */}
 
-        <div className="slide__container">
-            <div className="alimentacao alimentacao__white">
-                <div className="alimentacao__container--2">
-                    <div className="text__container">
-                        <p className="title">
-                            Vai bem para <span>varejo</span>
-                        </p>
-                        <p className="alimentacao__description">
-                            <span className="forms__text--rosa">
-                                Precisa entender porque algumas lojas vendem melhor que outras?</span> Com big data e o cruzamento dos dados internos da sua empresa é possível prever vendas e perfis de compra, comparar lojas, avaliar o desempenho de lojas de acordo com a localidade e sugerir pontos para abertura de novas lojas.
-                        </p>
+                <div className="slide__container">
+                    <div className="link__ancor" id="segmentos"></div>
+                    <div className="alimentacao">
+                        <div className="alimentacao__container--2">
+                            <div className="text__container">
+                                <p className="title">
+                                    Vai bem para <span>assistências técnicas</span>
+                                </p>
+                                <p className="alimentacao__description">
+                                    Você faz parte de uma seguradora de automóveis, produtos eletrônicos e seguro residencial? <span className="forms__text--rosa">Tem dificuldade de gerir sua rede de parceiros e acompanhar performances?</span> <br /> O Mapalytics ajuda a entender os territórios onde seus parceiros atuam tanto para prever sinistros quanto para projetar sua rede de assistência.
+                                </p>
+                            </div>
+                            <div>
+                                <video className="alimentacao__animation" src="/assistencia-tecnica.mp4" autoPlay muted loop></video>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <video className="alimentacao__animation" src="/varejo__video.mp4" autoPlay muted loop></video>
+                </div>
+
+                {/* 4 */}
+
+                <div className="slide__container">
+                    <div className="alimentacao alimentacao__white">
+                        <div className="alimentacao__container--2">
+                            <div className="text__container">
+                                <p className="title">
+                                    Vai bem para <span>varejo</span>
+                                </p>
+                                <p className="alimentacao__description">
+                                    <span className="forms__text--rosa">Precisa entender porque algumas lojas vendem melhor que outras?</span> Com big data e o cruzamento dos dados internos da sua empresa é possível prever vendas e perfis de compra, comparar lojas, avaliar o desempenho de lojas de acordo com a localidade e sugerir pontos para abertura de novas lojas.
+                                </p>
+                            </div>
+                            <div>
+                                <video className="alimentacao__animation" src="/varejo__video.mp4" autoPlay muted loop></video>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -242,84 +245,92 @@ export default function Home() { return (<>
             </p>
         </div>
 
-        <Carrossel slideName="thirdOne">
-            <div className="basico__column-2">
-                <div className="link__ancor" id="pacotes"></div>
-                <div className="text__container">
-                    <p className="basico__title title">
-                        Mapalytics <span className="title">Básico</span>
-                    </p>
-                    <img className="basico__img" src="./pc.png" alt="" />
-                    <p>
-                        Com o Mapalytics sua empresa consegue visualizar no mapa a lista
-                        de CNPJs por CNAE na proximidade. Podendo identificar potenciais
-                        clientes ou concorrentes e várias informações do negócio.
-                        Entendendo demandas específicas do seu setor e transformando
-                        conhecimento em estratégia de negócio e muito mais.
-                    </p>
-                    <button className="btn__white">Contratar</button>
-                </div>
-                <div className="text__text">
-                    <p className="basico__list--title">O que você irá encontrar:</p>
-                    <div className="basico__list">
-                        <div className="basico__item">Painel web (desktop)</div>
-                        <div className="basico__item">Login para até 5 usuários</div>
-                        <div className="basico__item">Criação de pontos de interesse no mapa</div>
-                        <div className="basico__item">Criação de áreas de estudo</div>
-                        <div className="basico__item">Visualização de leads por CNAE</div>
-                        <div className="basico__item">Busca de leads pelo Google Places</div>
-                        <div className="basico__item">Adição e gestão de leads em grupos de personalizados</div>
-                        <div className="basico__item">Dados da Receita Federal</div>
-                        <div className="basico__item">Visualização de dados sociodemográficos</div>
-                        <div className="basico__item">Contagem de leads e pontos de interesse dentro de uma área de estudo</div>
-                        <div className="basico__item">Integração com Pipedrive</div>
-                    </div>
-                </div>
-            </div>
-            <div className="basico__column-2 background__white">
-                <div className="text__container">
-                    <p className="basico__title title" style={{color: "var(--dm_rosa_00)"}}>Mapalytics <span className="title">Integrado</span></p>
-                    <img className="basico__img" src="./pc.png" alt="" />
-                    <p>
-                        Com o Mapalytics sua empresa consegue visualizar no mapa a lista de CNPJs por CNAE na proximidade. Podendo identificar potenciais clientes ou concorrentes e várias informações do negócio. Entendendo demandas específicas do seu setor e transformando conhecimento em estratégia de negócio e muito mais.
-                    </p>
-                    <button className="btn__white btn__white--pink">Contratar</button>
-                </div>
-                <div className="text__text">
-                    <p className="basico__list--title">O que você irá encontrar:</p>
-                    <br />
-                    <div className="basico__list  basico__list--check__black">
-                        <div className="basico__item basico__item--first">Todos os itens do pacote básico</div>
-                        <div className="basico__item">Geolocalização das suas vendas/contratos/clientes</div>
-                        <div className="basico__item">Visualização de dados internos em formato de BI (gráficos, rankings)</div>
-                        <div className="basico__item">Filtro de tempo para visualização de dados históricos (dia, semana, mês, ano)</div>
-                        <div className="basico__item">Integração por API</div>
-                        <div className="basico__item">+ Integrações com ferramentas externas</div>
-                        <div className="basico__item">Exportação de dados em csv</div>
-                    </div>
-                </div>
-            </div>
-            <div className="basico__column-2">
-                <div className="text__container">
-                    <p className="basico__title title">Mapalytics <span className="title">Completo</span></p>
-                    <img className="basico__img" src="./pc.png" alt="" />
-                    <p>
-                    Com o Mapalytics sua empresa consegue visualizar no mapa a lista de CNPJs por CNAE na proximidade. Podendo identificar potenciais clientes ou concorrentes e várias informações do negócio. Entendendo demandas específicas do seu setor e transformando conhecimento em estratégia de negócio e muito mais.
-                    </p>
-                    <button className="btn__white">Contratar</button>
-                </div>
-                <div className="text__text">
-                    <p className="basico__list--title">O que você irá encontrar:</p>
-                    <br />
-                    <div className="basico__list basico__list--check__white">
-                        <div className="basico__item basico__item--first">Todos os itens do pacote básico</div>
-                        <div className="basico__item">Geolocalização das suas vendas/contratos/clientes</div>
-                        <div className="basico__item">Visualização de dados internos em formato de BI (gráficos, rankings)</div>
-                        <div className="basico__item">Filtro de tempo para visualização de dados históricos (dia, semana, mês, ano)</div>
-                        <div className="basico__item">Integração por API</div>
-                        <div className="basico__item">+ Integrações com ferramentas externas</div>
-                        <div className="basico__item">Exportação de dados em csv</div>
-                    </div>
+        <Carrossel>
+            <div className="carrossel__component" id="thirdOne">
+                <div id="carrossel__slider">
+                    {/* 1 */}
+                    <section className="basico__column-2">
+                        <div className="link__ancor" id="pacotes"></div>
+                        <div className="text__container">
+                            <p className="basico__title title">
+                                Mapalytics <span className="title">Básico</span>
+                            </p>
+                            <img className="basico__img" src="./pc.png" alt="" />
+                            <p className="basico__call">Encontre consumidores e leads</p>
+                            <p>
+                                O Pacote Básico vai otimizar sua força de vendas ao encontrar leads geolocalizados e qualificados. Além de informações sociodemográficas para mostrar no mapa onde se encontra seu público-alvo e onde focar suas vendas.
+                            </p>
+                            <button className="btn__white">Contratar</button>
+                        </div>
+                        <div className="text__text">
+                            <p className="basico__list--title">O que você irá encontrar:</p>
+                            <div className="basico__list">
+                                <div className="basico__item">Painel web (desktop)</div>
+                                <div className="basico__item">Login para até 5 usuários</div>
+                                <div className="basico__item">Criação de pontos de interesse no mapa</div>
+                                <div className="basico__item">Criação de áreas de estudo</div>
+                                <div className="basico__item">Visualização de leads por CNAE</div>
+                                <div className="basico__item">Busca de leads pelo Google Places</div>
+                                <div className="basico__item">Adição e gestão de leads em grupos de personalizados</div>
+                                <div className="basico__item">Dados da Receita Federal</div>
+                                <div className="basico__item">Visualização de dados sociodemográficos</div>
+                                <div className="basico__item">Contagem de leads e pontos de interesse dentro de uma área de estudo</div>
+                                <div className="basico__item">Integração com Pipedrive</div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    {/* 2 */}
+                    <section className="basico__column-2 background__white">
+                        <div className="text__container">
+                            <p className="basico__title title" style={{color: "var(--dm_rosa_00)"}}>Mapalytics <span className="title">Integrado</span></p>
+                            <img className="basico__img" src="./pc.png" alt="" />
+                            <p className="basico__call">Métricas de vendas</p>
+                            <p>
+                                O Pacote Integrado geolocaliza suas vendas, clientes e leads e oferece um olhar histórico e comparativo através de gráficos e BI. Nossas métricas ajudam a conhecer seu desempenho por região e traçar estratégias de abertura e fechamento de lojas.
+                            </p>
+                            <button className="btn__white btn__white--pink">Contratar</button>
+                        </div>
+                        <div className="text__text">
+                            <p className="basico__list--title">O que você irá encontrar:</p>
+                            <br />
+                            <div className="basico__list  basico__list--check__black">
+                                <div className="basico__item basico__item--first">Todos os itens do pacote básico</div>
+                                <div className="basico__item">Geolocalização das suas vendas/contratos/clientes</div>
+                                <div className="basico__item">Visualização de dados internos em formato de BI (gráficos, rankings)</div>
+                                <div className="basico__item">Filtro de tempo para visualização de dados históricos (dia, semana, mês, ano)</div>
+                                <div className="basico__item">Integração por API</div>
+                                <div className="basico__item">+ Integrações com ferramentas externas</div>
+                                <div className="basico__item">Exportação de dados em csv</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 3 */}
+                    <section className="basico__column-2">
+                        <div className="text__container">
+                            <p className="basico__title title">Mapalytics <span className="title">Completo</span></p>
+                            <img className="basico__img" src="./pc.png" alt="" />
+                            <p className="basico__call">Deixe a AI descobrir por você</p>
+                            <p>
+                                O Pacote Completo oferece uma série de ferramentas de IA para trazer respostas mais assertivas e alertas para antecipar decisões antes que você precise tomá-las. Por exemplo, prever suas vendas por localidade para os próximos anos.
+                            </p>
+                            <button className="btn__white">Contratar</button>
+                        </div>
+                        <div className="text__text">
+                            <p className="basico__list--title">O que você irá encontrar:</p>
+                            <br />
+                            <div className="basico__list basico__list--check__white">
+                                <div className="basico__item basico__item--first">Todos os itens do pacote básico</div>
+                                <div className="basico__item">Geolocalização das suas vendas/contratos/clientes</div>
+                                <div className="basico__item">Visualização de dados internos em formato de BI (gráficos, rankings)</div>
+                                <div className="basico__item">Filtro de tempo para visualização de dados históricos (dia, semana, mês, ano)</div>
+                                <div className="basico__item">Integração por API</div>
+                                <div className="basico__item">+ Integrações com ferramentas externas</div>
+                                <div className="basico__item">Exportação de dados em csv</div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </Carrossel>

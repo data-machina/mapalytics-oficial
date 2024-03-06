@@ -106,7 +106,7 @@ h1 {
 
 .mapalytics__container--1 {
 	grid-template-columns: 1fr 1.4fr;
-	
+	gap: 40px;
 }
 
 .container__video--1 {
@@ -338,6 +338,10 @@ h2 {
 	font-size: 28px;
 }
 
+.basico__call{
+	font-size: 24px;
+}
+
 .basico__img {
 	width: 100%;
 }
@@ -361,8 +365,14 @@ h2 {
 }
 
 .btn__white:hover {
-	background: #dad4ce;
+	background: var(--dm_rosa_00);
+	color: #dad4ce;
 	transition: .2s;
+}
+
+.btn__white--pink:hover {
+	color: var(--dm_rosa_00);
+	background: #dad4ce;
 }
 
 .basico__list--title {

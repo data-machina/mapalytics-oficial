@@ -498,13 +498,13 @@ return (
                 <div className="footer__sociais">
                 <div className="footer__link">
                     <a href="https://www.instagram.com/data.machina/" target="blank">
-                    <img src="./icones/instagram.svg" />
+                        <img src="./icones/instagram.svg" alt="Logo Instagram" />
                     </a>
-                    <a href="https://www.linkedin.com/company/datamachina" target="blank" >
-                    <img src="./icones/linkedin.svg" />
+                    <a href="https://www.linkedin.com/company/datamachina" target="blank">
+                        <img src="./icones/linkedin.svg" alt="Logo LinkedIn"/>
                     </a>
                     <a href="https://www.youtube.com/channel/UC53uChh4XmLF6-CwT6G_UJw" target="blank">
-                    <img src="./icones/youtube.svg" />
+                        <img src="./icones/youtube.svg" alt="Logo YouTube"/>
                     </a>
                 </div>
                 <button className="button__border">material de imprensa</button>
@@ -513,7 +513,7 @@ return (
             <div className="footer__bottom">
                 <div className="footer__bottom--items">
                 <Link href="/">
-                    <img className="footer__" src="./dm.svg" alt="" />
+                    <img className="footer__" src="./dm.svg" alt="Logo Data Machina" />
                 </Link>
                 <div className="footer__mapalytics">
                     <img src="./mapalyticsbranco.svg" alt="" />
@@ -522,7 +522,7 @@ return (
                 <div className="footer__bottom--items">
                 <p>Data Machina - 2024</p>
                 <a href="http://tre.art.br/" target="black" className="tre">
-                    <img className="footer__tre" src="./tre.svg" alt="" />
+                    <img className="footer__tre" src="./tre.svg" alt="Logo Tre" />
                 </a>
                 </div>
             </div>

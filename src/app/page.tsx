@@ -1,13 +1,16 @@
 'use client'
 import './datamachina.css';
-import Head from 'next/head'
-
+import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script'
 
 import Link from 'next/link'
 
 export default function Home() {
 return(
 	<>
+		<GoogleAnalytics gaId="GTM-KW48QX9" />
+	
+	
 		{/* Bootstrap */}
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -91,9 +94,9 @@ return(
 					</div>
 				</div>
 				<div className="contorno">
-					<img className="gif-animado" src="datamachina/img/Maplytics-Atualizado.gif" alt="" />
+					<img className="gif-animado" src="datamachina/img/Maplytics-Atualizado.gif" alt="Gif animado de um notbook" />
 					<div className="unidade-footer-3 unidade-footer">
-						<img src="datamachina/img/mapalyticsbranco.svg" />
+						<img src="datamachina/img/mapalyticsbranco.svg" alt='Data Machina Mapalytics' />
 					</div>
 				</div>
 			</div>
@@ -115,52 +118,52 @@ return(
 		
 		<section className="marcas">
 			<a href="https://www.grupozelo.com/grupo-zelo/pt-br" target="_blank">
-				<img src="datamachina/logos/Prancheta 1zelo 1.svg" />
+				<img src="datamachina/logos/Prancheta 1zelo 1.svg" alt="" />
 			</a>
 			<a href="https://www.casabauducco.com.br/" target="_blank">
-				<img src="datamachina/logos/Prancheta 1bauducco 1.svg" />
+				<img src="datamachina/logos/Prancheta 1bauducco 1.svg"  alt="" />
 			</a>
 			<a href="https://www.comgas.com.br/" target="_blank">
-				<img src="datamachina/logos/comgas.svg" />
+				<img src="datamachina/logos/comgas.svg"  alt="" />
 			</a>
 			<a href="https://www.lojasedmil.com.br/" target="_blank">
-				<img src="datamachina/logos/edmil.png" />
+				<img src="datamachina/logos/edmil.png"  alt="" />
 			</a>
 			<a href="https://www.whirlpool.com.br/" target="_blank">
-				<img src="datamachina/logos/whirlpoll.png" />
+				<img src="datamachina/logos/whirlpoll.png"  alt="" />
 			</a>
 			<a href="https://www.mrs.com.br/" target="_blank">
-				<img src="datamachina/logos/mrs.png" />
+				<img src="datamachina/logos/mrs.png"  alt="" />
 			</a>
 			<a href="https://trutec.com.br/" target="_blank">
-				<img src="datamachina/logos/trutec1.png" />
+				<img src="datamachina/logos/trutec1.png"  alt="" />
 			</a>
 			<a href="https://www.votorantimcimentos.com.br/" target="_blank">
-				<img src="datamachina/logos/Prancheta 1votorantim 1.svg" />
+				<img src="datamachina/logos/Prancheta 1votorantim 1.svg"  alt="" />
 			</a>
 			<a href="https://www.aesbrasil.com.br/pt-br" target="_blank">
-				<img src="datamachina/logos/aes.svg" />
+				<img src="datamachina/logos/aes.svg"  alt="" />
 			</a>
 			<a href="http://www.gruporeciclabr.com.br/pt/" target="_blank">
-				<img src="datamachina/logos/recicla.png" />
+				<img src="datamachina/logos/recicla.png"  alt="" />
 			</a>
 			<a href="http://www.labcidade.fau.usp.br/" target="_blank">
-				<img src="datamachina/logos/labcidade.png" />
+				<img src="datamachina/logos/labcidade.png"  alt="" />
 			</a>
 			<a href="https://cestanobre.com.br/" target="_blank">
-				<img src="datamachina/logos/nobrecesta.png" />
+				<img src="datamachina/logos/nobrecesta.png"  alt="" />
 			</a>
 			<a href="https://www.poloplanejamento.com/" target="_blank">
-				<img src="datamachina/logos/polo.png" />
+				<img src="datamachina/logos/polo.png"  alt="" />
 			</a>
 			<a href="https://mercadofavo.com/" target="_blank">
-				<img src="datamachina/logos/favo.svg" />
+				<img src="datamachina/logos/favo.svg"  alt="" />
 			</a>
 			<a href="https://www.trust.com.br/" target="_blank">
-				<img src="datamachina/logos/Prancheta 1trust.svg" />
+				<img src="datamachina/logos/Prancheta 1trust.svg"  alt="" />
 			</a>
 			<a href="https://www.bhrgastronomia.com.br/" target="_blank">
-				<img src="datamachina/logos/bhr.png" />
+				<img src="datamachina/logos/bhr.png"  alt="" />
 			</a>
 		</section>
 
@@ -233,22 +236,22 @@ return(
 
 		<div className="marcas" id="clientes">
 			<a href="http://adesampa.com.br/" target="black">
-				<img src="datamachina/logos/adesampa.png" />
+				<img src="datamachina/logos/adesampa.png" alt=""/>
 			</a>
 			<a href="https://www.inovativabrasil.com.br/" target="black">
-				<img src="datamachina/logos/inovabrasil.png" />
+				<img src="datamachina/logos/inovabrasil.png" alt=""/>
 			</a>
 			<a href="https://www.capital.sp.gov.br/" target="black">
-				<img src="datamachina/logos/prefeituradesp.svg" />
+				<img src="datamachina/logos/prefeituradesp.svg" alt=""/>
 			</a>
 			<a href="https://vedacit.com.br/" target="black">
-				<img src="datamachina/logos/vedacitlabs.png" />
+				<img src="datamachina/logos/vedacitlabs.png" alt=""/>
 			</a>
 			<a href="https://softex.br/" target="black">
-				<img src="datamachina/logos/softex.png" />
+				<img src="datamachina/logos/softex.png" alt=""/>
 			</a>
 			<a href="https://www.gov.br/startuppoint/pt-br/programas/ia2-mctic" target="black">
-				<img src="datamachina/logos/ia2.png" />
+				<img src="datamachina/logos/ia2.png" alt=""/>
 			</a>
 		</div>
 
@@ -302,13 +305,13 @@ return(
 				<div className="footer__sociais">
 					<div className="footer__link">
 						<a href="https://www.instagram.com/data.machina/" target="blank">
-							<img src="./icones/instagram.svg" />
+							<img src="./icones/instagram.svg" alt=""/>
 						</a>
 						<a href="https://www.linkedin.com/company/datamachina" target="blank" >
-							<img src="./icones/linkedin.svg" />
+							<img src="./icones/linkedin.svg" alt=""/>
 						</a>
 						<a href="https://www.youtube.com/channel/UC53uChh4XmLF6-CwT6G_UJw" target="blank">
-							<img src="./icones/youtube.svg" />
+							<img src="./icones/youtube.svg" alt=""/>
 						</a>
 					</div>
 					<button className="button__border">material de imprensa</button>
@@ -331,10 +334,6 @@ return(
 				</div>
 			</div>
 		</footer>
-
-		{/* Google Tag Manager (noscript) */}
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW48QX9"height="0" width="0" style={{ display: 'none; visibility:hidden' }}></iframe></noscript>
-		{/* End Google Tag Manager (noscript) */}
 
 		{/* Bootstrap */}
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

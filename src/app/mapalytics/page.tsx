@@ -424,7 +424,7 @@ export default function Home() {
           <div className="manda title">
             Tenha acesso ao nosso material para empresas <br /> clicando abaixo!
           </div>
-          <a className="mais" href="./pdfs/dm_mapalytics.pdf" target="_blank">
+          <a className="mais" href="./dm_mapalytics.pdf" target="_blank">
             Saiba mais
             <div className="mais__arrow">↓</div>
           </a>

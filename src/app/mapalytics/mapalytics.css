@@ -799,7 +799,6 @@ input[type="email"],
 	.basico__column-2 {
 		border-bottom: 1px solid var(--dm_rosa_00);
 	}
-	
 }
 
 @media screen and (max-width: 600px) {
@@ -809,5 +808,7 @@ input[type="email"],
 		flex-direction: column;
 		gap: 0;
 	}
+
+	
 
 }

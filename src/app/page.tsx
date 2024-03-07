@@ -54,8 +54,8 @@ export default function Home() {
 			<p className='title' >Nossa inquietude nos leva a propor soluções para <br /> o dia-a-dia com tecnologias de fronteira</p>
 		</div>
 
-		<span className="produtos">
-
+		<section className="produtos">
+			<div className="link__ancor" id="solucoes"></div>
 			{/* <!-- 1 -- > */}
 			
 			<div className="produtos__negocio--1" id="Mapalytics">
@@ -87,19 +87,23 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+		</section>
 
-		</span>
+		{/* SOLUÇÕES */}
 
-		<div className='solucoes'>
+		<section className="solucoes">
+			<div className="link__ancor" id="clientes"></div>
 			<div className="nossas-solucoes" id="nossas-solucoes">
 				<p className='title'>
 					Nossas soluções já ajudaram várias <br />
 					empresas e queremos ajudar muitas mais
 				</p>
 			</div>
-		</div>
+		</section>
+
+		{/* MARCAS */}
 		
-		<div className="marcas">
+		<section className="marcas">
 			<a href="https://www.grupozelo.com/grupo-zelo/pt-br" target="_blank">
                 <img src="datamachina/logos/Prancheta 1zelo 1.svg" />
             </a>
@@ -148,7 +152,7 @@ export default function Home() {
 			<a href="https://www.bhrgastronomia.com.br/" target="_blank">
                 <img src="datamachina/logos/bhr.png" />
             </a>
-		</div>
+		</section>
 
 		<div className="container-comentarios">
 			<div className="temos-orgulho">
@@ -190,7 +194,8 @@ export default function Home() {
 			</div>
 		</div>
 
-		<div className="premio" id="premio">
+		<div className="premio">
+			<div className="link__ancor" id="premios"></div>
 			<div className='premio__container'>
 				<div className="video-premio">
 					<iframe
@@ -211,7 +216,8 @@ export default function Home() {
 			</div>
 		</div>
 
-		<div className="programas-de-aceleracao" id="aceleracao">
+		<div className="programas-de-aceleracao">
+			<div className="link__ancor" id="aceleracoes"></div>
 			<p className='title'>Vários programas de aceleração nos ajudaram a <br /> aprimorar nossos produtos</p>
 		</div>
 
@@ -236,25 +242,23 @@ export default function Home() {
 			</a>
 		</div>
 
-		<div className="conhecer" id="contato">
-			<div className="conhecer__nos">
-				<div className="quer-nos-conhecer">
-					<p>
-						Alguma das nossas soluções te interessou? Ou quer saber como resolver
-						outro problema?
-					</p>
-					<div className="manda">
-						Manda um e-mail <br /> pra gente
-					</div>
-					<p className="seta-1">→</p>
-				
-					<a href="mailto:contato@datamachina.com.br">
-						<form className="conhecer__email">
-							contato@datamachina.com.br
-						</form>
-					</a>
-
+		<div className="conhecer__nos">
+			<div className="link__ancor" id="contato"></div>
+			<div className="quer-nos-conhecer">
+				<p>
+					Alguma das nossas soluções te interessou? Ou quer saber como resolver
+					outro problema?
+				</p>
+				<div className="manda">
+					Manda um e-mail <br /> pra gente
 				</div>
+				<p className="seta-1">→</p>
+			
+				<a href="mailto:contato@datamachina.com.br">
+					<form className="conhecer__email">
+						contato@datamachina.com.br
+					</form>
+				</a>
 			</div>
 		</div>
 		                

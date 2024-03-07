@@ -16,7 +16,7 @@ export default function Home() {
           <div className="banner__container">
             <div className="banner__texts">
               <div>
-                <h1>
+                <h1 className="map-h1">
                   /Leads e clientes <br />
                   geolocalizados para otimizar <br />
                   sua força de vendas
@@ -54,7 +54,7 @@ export default function Home() {
             <div className="link__ancor" id="oquee"></div>
             <div className="mapalytics__container--1">
               <div className="mapalytics__texts">
-                <h2>O que é o Mapalytics?</h2>
+                <h2 className="map-h2">O que é o Mapalytics?</h2>
                 <p className="titulo-2">
                   O Mapalytics é um painel web de geomarketing que combina dados
                   de fontes públicas para ajudar seu negócio a encontrar novos
@@ -94,7 +94,7 @@ export default function Home() {
             <div className="mapalytics__container--2">
               <span></span>
               <div className="mapalytics__texts">
-                <h2>Inteligência artificial para tomada de decisão</h2>
+                <p className="map-h2">Inteligência artificial para tomada de decisão</p>
                 <p className="titulo-2">
                   O Mapalytics não é só um painel de visualização, mas de
                   inteligência. Nossas funcionalidades contam com algoritmos de
@@ -129,13 +129,8 @@ export default function Home() {
                   <p className="alimentacao__description">
                     Você faz parte da indústria e comércio que abastece
                     restaurantes, dark kitchens, hotéis e todo o setor de
-                    alimentação?
-                    <span className="forms__text--rosa">
-                      
-                      Tem dificuldade de encontrar e qualificar novos leads na
-                      sua máquina de vendas?
-                    </span>
-                    O Mapalytics pode te ajudar a encontrar leads na base da
+                    alimentação? <span className="forms__text--rosa"> Tem dificuldade de encontrar e qualificar novos leads na
+                      sua máquina de vendas? </span> O Mapalytics pode te ajudar a encontrar leads na base da
                     Receita Federal e no Google e qualificar os resultados para
                     ganhar tempo e expandir sua cartela de clientes.
                   </p>
@@ -186,12 +181,7 @@ export default function Home() {
                     Vai bem para <span>assistências técnicas</span>
                   </p>
                   <p className="alimentacao__description">
-                    Você faz parte de uma seguradora de automóveis, produtos
-                    eletrônicos e seguro residencial?
-                    <span className="forms__text--rosa">
-                      Tem dificuldade de gerir sua rede de parceiros e
-                      acompanhar performances? </span>
-                    <br /> O Mapalytics ajuda a entender os territórios onde seus parceiros atuam tanto para prever sinistros quanto para projetar sua rede de assistência.
+                    Você faz parte de uma seguradora de automóveis, produtos eletrônicos e seguro residencial? <span className="forms__text--rosa"> Tem dificuldade de gerir sua rede de parceiros e acompanhar performances? </span> <br /> O Mapalytics ajuda a entender os territórios onde seus parceiros atuam tanto para prever sinistros quanto para projetar sua rede de assistência.
                   </p>
                 </div>
                 <div>

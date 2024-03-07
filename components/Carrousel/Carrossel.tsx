@@ -12,18 +12,22 @@ export const Carrossel: React.FC<CarrouselProps> = ({ children }) => {
 
   useEffect(() => {
     intervalRef.current = window.setInterval(() => {
-      if (!slideRef.current) return;
-      let currentPass = Number(slideRef.current.getAttribute('data-pass')) || 0;
-      if (currentPass < quantiles - 1) currentPass += 1;
-      else if (currentPass === quantiles - 1) currentPass = 0;
-      slideRef.current.style.transform = `translateX(-${currentPass}00%)`;
-      slideRef.current.setAttribute('data-pass', currentPass.toString());
-    }, 2000);
+        if (!slideRef.current) return;
+        let currentPass = Number(slideRef.current.getAttribute('data-pass')) || 0;
+        if (currentPass < quantiles - 1) currentPass += 1;
+        else if (currentPass === quantiles - 1) currentPass = 0;
+        slideRef.current.style.transform = `translateX(-${currentPass}00%)`;
+        slideRef.current.setAttribute('data-pass', currentPass.toString());
+        btnRef.current.forEach(obj => { // Remove a classe 'controlls__btn--selected' dos botões
+            obj.classList.remove('controlls__btn--selected')
+        })
+        btnRef.current[currentPass].classList.add('controlls__btn--selected') //  adiciona a classe 'controlls__btn--selected' no slide atual
+    }, 7000); // Tempo para que o slide seja passdo automáticamente
 
     return () => {
       if (intervalRef.current !== null) clearInterval(intervalRef.current); // Limpa o intervalo quando o componente desmontar
     };
-  }, [quantiles]); // Dependências do useEffect
+  }, [quantiles]);
 
   const passSlide = (id: number) => {
     if (!slideRef.current) return;

@@ -21,7 +21,7 @@
 	bottom: 40px;
 	gap: 10px;
 	z-index: 2;
-	transition: 2s;
+	transition: .5s;
 }
 
 .controlls__btn {
@@ -30,13 +30,13 @@
 	height: 12px;
 	border-radius: 50%;
 	border: none;
-	transition: .2s;
+	transition: .5s;
 	cursor: pointer;
 }
 
 .controlls__btn:hover, .controlls__btn--selected {
 	background: var(--dm_rosa_00);
-	transition: .2s;
+	transition: .5s;
 }
 
 @media screen and (max-width: 800px) {

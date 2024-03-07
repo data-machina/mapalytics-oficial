@@ -89,6 +89,13 @@ h1 em {
     padding: 0 20px;
 }
 
+
+/* Produtos */
+
+.produtos {
+    position: relative;
+}
+
 .produtos__negocio {
     display: grid;
     grid-template-columns: 0.8fr 1fr;
@@ -102,7 +109,6 @@ h1 em {
     align-items: center;
     grid-template-columns: 1fr 0.8fr;
     width: 100%;
-
     color: var(--dm_creme_02);
 }
 
@@ -122,14 +128,12 @@ h1 em {
     object-fit: cover;
 }
 
-.produtos__saiba-mais--1,
-.produtos__saiba-mais--2,
 .produtos__saiba-mais--3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: none;
-    color: var(--dm_creme_02);
+    color: var(--dm_creme_02) !important;
     height: 45px;
     width: 205px;
     position: relative;
@@ -148,7 +152,6 @@ h1 em {
     transform: rotate(-90deg);
     transition: 0.3s;
 }
-
 
 .produtos__saiba-mais--3 {
     border-style: solid;
@@ -207,8 +210,6 @@ h1 em {
     align-items: flex-end;
 }
 
-.unidade-footer-1,
-.unidade-footer-2,
 .unidade-footer-3 {
   display: flex;
   justify-content: flex-end;
@@ -219,24 +220,11 @@ h1 em {
   padding-right: 20px;
 }
 
-.unidade-footer-1 img,
-.unidade-footer-2 img,
 .unidade-footer-3 img {
   margin-left: 20px;
   height: 60px;
 }
 
-.unidade-footer-2 {
-  justify-content: flex-start;
-}
-
-.unidade-footer-1 {
-  background: var(--dm_laranja_00);
-}
-
-.unidade-footer-2 {
-  background: var(--dm_verde_00);
-}
 
 .unidade-footer-3 {
   background: var(--dm_rosa_00);
@@ -260,7 +248,7 @@ h1 em {
 
 .dm-titulo-2,
 .dm-titulo-4 {
-    font-weight: 100;
+    font-weight: 400;
     font-size: 21px;
     line-height: 30px;
     max-width: 100%;
@@ -275,6 +263,7 @@ h1 em {
 /* Soluções */
 
 .solucoes {
+    position: relative;
     background: var(--dm_laranja_00);
     width: 100%;
 }
@@ -399,6 +388,7 @@ h1 em {
 }
 
 .premio {
+    position: relative;
     background: var(--dm_creme_02);
 }
 
@@ -450,6 +440,7 @@ h1 em {
 
 
 .programas-de-aceleracao {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -494,7 +485,7 @@ h1 em {
 }
 
 
-.contato {
+.dm-contato {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -502,9 +493,11 @@ h1 em {
 }
 
 .conhecer__nos {
+    position: relative;
     background: var(--dm_azul_00);
     width: 100%;
-    height: 400px;
+    min-height: 400px;
+    padding: 40px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -654,7 +647,7 @@ input[type="email"],
 
     .produtos {
         display: block;
-        margin: 50px 0;
+        padding: 50px 0;
     }
 
     #Logística {
@@ -680,10 +673,6 @@ input[type="email"],
     .iframe-premio {
         width: 471px;
         height: 265px;
-    }
-
-    .manda {
-        font-size: 22px;
     }
 
     .dm-titulo-1,
@@ -727,10 +716,6 @@ input[type="email"],
     .logo-premio img {
         width: 200px;
         object-fit: contain;
-    }
-
-    .contato {
-        grid-template-columns: 1fr;
     }
 
     .conhecer__nos {
@@ -812,13 +797,7 @@ input[type="email"],
     }
 }
 
-
-
 @media (max-width: 1000px) {
-
-    br {
-        display: none;
-    }
 
     /* Banner */
 
@@ -1144,7 +1123,7 @@ input[type="email"],
     }
 
     .produtos {
-        margin: 0;
+        padding: 0;
     }
 
     .container-data-machina {

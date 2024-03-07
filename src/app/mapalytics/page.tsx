@@ -1,6 +1,9 @@
 "use client";
 import "./mapalytics.css";
 import { Carrossel } from "../../../components/Carrousel/Carrossel";
+import Link from 'next/link'
+
+
 // import Image from 'next/image'
 export default function Home() {
   return (
@@ -19,7 +22,7 @@ export default function Home() {
                   sua força de vendas
                 </h1>
                 <p className="banner__p-2">
-                  Explore o poder da inteligência geográfica com IA. Nossa{" "}
+                  Explore o poder da inteligência geográfica com IA. Nossa
                   <br />
                   plataforma integra dados públicos e internos, revelando <br />
                   insights poderosos para impulsionar seu negócio.
@@ -126,12 +129,12 @@ export default function Home() {
                   <p className="alimentacao__description">
                     Você faz parte da indústria e comércio que abastece
                     restaurantes, dark kitchens, hotéis e todo o setor de
-                    alimentação?{" "}
+                    alimentação?
                     <span className="forms__text--rosa">
-                      {" "}
+                      
                       Tem dificuldade de encontrar e qualificar novos leads na
                       sua máquina de vendas?
-                    </span>{" "}
+                    </span>
                     O Mapalytics pode te ajudar a encontrar leads na base da
                     Receita Federal e no Google e qualificar os resultados para
                     ganhar tempo e expandir sua cartela de clientes.
@@ -151,10 +154,9 @@ export default function Home() {
                     Vai bem para <span>construção civil</span>
                   </p>
                   <p className="alimentacao__description">
-                    <span className="forms__text--rosa">
-                      Precisa mapear obras e construções no Brasil?
-                    </span>{" "}
-                    <br />O Mapalytics ajuda a encontrar edifícios em construção
+                    <span className="forms__text--rosa"> Precisa mapear obras e construções no Brasil? </span>
+                    <br />
+                    O Mapalytics ajuda a encontrar edifícios em construção
                     que podem ser leads para o seu negócio. O que garante
                     agilidade e facilidade para mapear futuros novos clientes e
                     atender novas áreas.
@@ -185,14 +187,11 @@ export default function Home() {
                   </p>
                   <p className="alimentacao__description">
                     Você faz parte de uma seguradora de automóveis, produtos
-                    eletrônicos e seguro residencial?{" "}
+                    eletrônicos e seguro residencial?
                     <span className="forms__text--rosa">
                       Tem dificuldade de gerir sua rede de parceiros e
-                      acompanhar performances?
-                    </span>{" "}
-                    <br /> O Mapalytics ajuda a entender os territórios onde
-                    seus parceiros atuam tanto para prever sinistros quanto para
-                    projetar sua rede de assistência.
+                      acompanhar performances? </span>
+                    <br /> O Mapalytics ajuda a entender os territórios onde seus parceiros atuam tanto para prever sinistros quanto para projetar sua rede de assistência.
                   </p>
                 </div>
                 <div>
@@ -221,11 +220,9 @@ export default function Home() {
                     <span className="forms__text--rosa">
                       Precisa entender porque algumas lojas vendem melhor que
                       outras?
-                    </span>{" "}
-                    Com big data e o cruzamento dos dados internos da sua
+                    </span> Com big data e o cruzamento dos dados internos da sua
                     empresa é possível prever vendas e perfis de compra,
-                    comparar lojas, avaliar o desempenho de lojas de acordo com
-                    a localidade e sugerir pontos para abertura de novas lojas.
+                    comparar lojas, <strong>avaliar o desempenho de lojas</strong> de acordo com a localidade e sugerir pontos para abertura de novas lojas.
                   </p>
                 </div>
                 <div>
@@ -262,10 +259,10 @@ export default function Home() {
             <section className="basico__column-2">
               <div className="link__ancor" id="pacotes"></div>
               <div className="text__container">
-                <p className="basico__title title">
+                <p className="basico__title">
                   Mapalytics <span className="title">Básico</span>
                 </p>
-                <img className="basico__img" src="./pc.png" alt="" />
+                <img className="basico__img" src="./4_slide-1.png" alt="" />
                 <p className="basico__call">Encontre consumidores e leads</p>
                 <p>
                   O Pacote Básico vai otimizar sua força de vendas ao encontrar
@@ -310,12 +307,12 @@ export default function Home() {
             <section className="basico__column-2 background__white">
               <div className="text__container">
                 <p
-                  className="basico__title title"
+                  className="basico__title"
                   style={{ color: "var(--dm_rosa_00)" }}
                 >
                   Mapalytics <span className="title">Integrado</span>
                 </p>
-                <img className="basico__img" src="./pc.png" alt="" />
+                <img className="basico__img" src="./4_slide-2.png" alt="" />
                 <p className="basico__call">Métricas de vendas</p>
                 <p>
                   O Pacote Integrado geolocaliza suas vendas, clientes e leads e
@@ -357,10 +354,10 @@ export default function Home() {
             {/* 3 */}
             <section className="basico__column-2">
               <div className="text__container">
-                <p className="basico__title title">
+                <p className="basico__title">
                   Mapalytics <span className="title">Completo</span>
                 </p>
-                <img className="basico__img" src="./pc.png" alt="" />
+                <img className="basico__img" src="./4_slide-3.png" alt="" />
                 <p className="basico__call">Deixe a AI descobrir por você</p>
                 <p>
                   O Pacote Completo oferece uma série de ferramentas de IA para
@@ -411,7 +408,7 @@ export default function Home() {
                   demonstração
                 </p>
                 <p>
-                  Preencha o formulário e <br /> entraremos em contato <br />{" "}
+                  Preencha o formulário e <br /> entraremos em contato <br />
                   com você.
                 </p>
               </div>
@@ -460,6 +457,66 @@ export default function Home() {
             </div>
           </div>
         </div>
+                        
+        {/* FOOTER */}
+        
+        <footer>
+          <div className="footer__container">
+            <img className="footer__logo" src="./dm-logo-name.svg" alt="" />
+            
+            <div className="menu__empresa">
+              <a className="first" href="#">data machina</a>
+              <a className="links" href="#inicio">início</a>
+              <a className="links" href="#inicio">soluções</a>
+              <a className="links" href="#nossas-solucoes">clientes</a>
+              <a className="links" href="#premio">prêmios</a>
+              <a className="links" href="#aceleracao">aceleração</a>
+              <a className="links" href="#contato">contato</a>
+            </div>
+
+            <div className="menu__empresa">
+              <a className="first" href="#Mapalytics">mapalytics</a>
+              <a className="links" href="">apresentação</a>
+              <a className="links" href="">o que é o mapalytics</a>
+              <a className="links" href="">segmentos atendidos</a>
+              <a className="links" href="">pacotes e funcionalidades</a>
+              <a className="links" href="">peça uma demonstração</a>
+              <a className="links" href="">material para empresas</a>
+              <a className="links" href="">contato</a>
+
+            </div>
+            <div className="footer__sociais">
+              <div className="footer__link">
+                <a href="https://www.instagram.com/data.machina/" target="blank">
+                  <img src="./icones/instagram.svg" />
+                </a>
+                <a href="https://www.linkedin.com/company/datamachina" target="blank" >
+                  <img src="./icones/linkedin.svg" />
+                </a>
+                <a href="https://www.youtube.com/channel/UC53uChh4XmLF6-CwT6G_UJw" target="blank">
+                  <img src="./icones/youtube.svg" />
+                </a>
+              </div>
+              <button className="button__border">material de imprensa</button>
+            </div>
+          </div>
+          <div className="footer__bottom">
+            <div className="footer__bottom--items">
+              <Link href="/">
+                <img className="footer__" src="./dm.svg" alt="" />
+              </Link>
+              <div className="footer__mapalytics">
+                <img src="./mapalyticsbranco.svg" alt="" />
+              </div>
+            </div>
+            <div className="footer__bottom--items">
+              <p>Data Machina - 2024</p>
+              <a href="http://tre.art.br/" target="black" className="tre">
+                <img className="footer__tre" src="./tre.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );

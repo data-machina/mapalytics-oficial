@@ -1,25 +1,21 @@
 'use client'
 import './datamachina.css';
 
-/* setTimeout(() => {
-	document.head.innerHTML += '<title>Data Machina</title>'
-	document.head.innerHTML += `
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-KW48QX9');</script>
-		<!-- End Google Tag Manager -->
-	`
+import Link from 'next/link'
 
-	document.body.innerHTML += `
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW48QX9"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	`
-}, 200); */
+/* 
+	HEAD
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KW48QX9');</script>
+	<!-- End Google Tag Manager -->
+
+	BODY
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW48QX9"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+ */
+
 
 export default function Home() {
     return(<>
@@ -75,12 +71,13 @@ export default function Home() {
 							as áreas de novas oportunidades. Além de trazer os dados históricos através de business intelligence
 							para dar total domínio estratégico e tático para seus planos de crescimento.
 						</p>
-						<a className="produtos__saiba-mais--3 dm_mapalytics" href="/pdfs/dm_mapalytics.pdf" target="_blank">
+
+						<Link className="produtos__saiba-mais--3 dm_mapalytics" href="/mapalytics">
 							Saiba mais
 							<div className="produtos__ir">
 								↓
 							</div>
-						</a>
+						</Link>
 					</div>
 				</div>
 				<div className="contorno">
@@ -260,6 +257,68 @@ export default function Home() {
 				</div>
 			</div>
 		</div>
+		                
+		{/* FOOTER */}
+		
+		<footer>
+			<div className="footer__container">
+				<img className="footer__logo" src="./dm-logo-name.svg" alt="" />
+					
+				<div className="menu__empresa">
+					<a className="first" href="#">data machina</a>
+					<a className="links" href="#inicio">início</a>
+					<a className="links" href="#inicio">soluções</a>
+					<a className="links" href="#nossas-solucoes">clientes</a>
+					<a className="links" href="#premio">prêmios</a>
+					<a className="links" href="#aceleracao">aceleração</a>
+					<a className="links" href="#contato">contato</a>
+				</div>
+
+				<div className="menu__empresa">
+					<a className="first" href="#Mapalytics">mapalytics</a>
+					<a className="links" href="">apresentação</a>
+					<a className="links" href="">o que é o mapalytics</a>
+					<a className="links" href="">segmentos atendidos</a>
+					<a className="links" href="">pacotes e funcionalidades</a>
+					<a className="links" href="">peça uma demonstração</a>
+					<a className="links" href="">material para empresas</a>
+					<a className="links" href="">contato</a>
+
+				</div>
+				<div className="footer__sociais">
+					<div className="footer__link">
+						<a href="https://www.instagram.com/data.machina/" target="blank">
+							<img src="./icones/instagram.svg" />
+						</a>
+						<a href="https://www.linkedin.com/company/datamachina" target="blank" >
+							<img src="./icones/linkedin.svg" />
+						</a>
+						<a href="https://www.youtube.com/channel/UC53uChh4XmLF6-CwT6G_UJw" target="blank">
+							<img src="./icones/youtube.svg" />
+						</a>
+					</div>
+					<button className="button__border">material de imprensa</button>
+				</div>
+			</div>
+			<div className="footer__bottom">
+				<div className="footer__bottom--items">
+					<div className="dm-footer__mapalytics">
+						<img className="footer__logo--dm" src="./dm-white.svg" alt="" />
+					</div>
+					<Link href="/mapalytics">
+						<img className='footer__mapalytics--logo' src="./mapalyticsbranco.svg" alt="" />
+					</Link>
+				</div>
+				<div className="footer__bottom--items">
+					<p>Data Machina - 2024</p>
+					<a href="http://tre.art.br/" target="black" className="tre">
+						<img className="footer__tre" src="./tre.svg" alt="" />
+					</a>
+				</div>
+			</div>
+		</footer>
+
+		
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
 			integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
 			crossOrigin="anonymous"></script>

@@ -616,6 +616,31 @@ input[type="email"],
     font-size: 14px;
 }
 
+.dm-footer__mapalytics::after {
+	content: '';
+	position: absolute;
+	top: -15px;
+	z-index: 1;
+	left: 0;
+	background: var(--dm_azul_00);
+	height: 4px;
+	width: 100%;
+}
+
+.dm-footer__mapalytics {
+	position: relative;
+}
+
+.footer__logo--dm {
+	height: 32px;
+    width: 38px;
+	object-fit: contain;
+}
+
+.footer__mapalytics--logo {
+    height: 32px;
+}
+
 @media only screen and (max-width: 1700px) {
 
     .dm-titulo-2,

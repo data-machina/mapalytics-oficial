@@ -1,25 +1,13 @@
 'use client'
 import './datamachina.css';
+import Head from 'next/head'
+
 
 import Link from 'next/link'
 
-/* 
-	HEAD
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KW48QX9');</script>
-	<!-- End Google Tag Manager -->
-
-	BODY
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW48QX9"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
- */
-
-
 export default function Home() {
-    return(<>
-
+return(
+	<>
 		{/* Bootstrap */}
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -29,8 +17,30 @@ export default function Home() {
 		></link>
 
 
+		<header>
+				<img className="header__logo" src="./dm-logo-name.svg" alt="Data Machina" />
+				<nav>
+					<div className="dropdown">
+						<Link className="dropdown__link" href="/">data machina</Link>
+						<div className="header__dropdown">
+							<a className="header__option" href="#inicio">início</a>
+							<a className="header__option" href="#solucoes">soluções</a>
+							<a className="header__option" href="#clientes">clientes</a>
+							<a className="header__option" href="#premios">prêmios</a>
+							<a className="header__option" href="#aceleracoes">acelerações</a>
+							<a className="header__option" href="#contato">contato</a>
+						</div>
+					</div>
+
+					<div className="dropdown">
+						<Link className="dropdown__link" href="/mapalytics">mapalytics</Link>
+					</div>
+				</nav>
+		</header>
+
+
 		<div className="dm-banner" id="inicio">
-		 	<div className='dm-banner__container'>
+			<div className='dm-banner__container'>
 				<div className="dm-banner__texts">
 					<h1> <em>/</em> Gostamos <br /> de problemas <br /> difíceis!</h1>
 					<p>
@@ -105,60 +115,60 @@ export default function Home() {
 		
 		<section className="marcas">
 			<a href="https://www.grupozelo.com/grupo-zelo/pt-br" target="_blank">
-                <img src="datamachina/logos/Prancheta 1zelo 1.svg" />
-            </a>
+				<img src="datamachina/logos/Prancheta 1zelo 1.svg" />
+			</a>
 			<a href="https://www.casabauducco.com.br/" target="_blank">
-                <img src="datamachina/logos/Prancheta 1bauducco 1.svg" />
-            </a>
+				<img src="datamachina/logos/Prancheta 1bauducco 1.svg" />
+			</a>
 			<a href="https://www.comgas.com.br/" target="_blank">
-                <img src="datamachina/logos/comgas.svg" />
-            </a>
+				<img src="datamachina/logos/comgas.svg" />
+			</a>
 			<a href="https://www.lojasedmil.com.br/" target="_blank">
-                <img src="datamachina/logos/edmil.png" />
-            </a>
+				<img src="datamachina/logos/edmil.png" />
+			</a>
 			<a href="https://www.whirlpool.com.br/" target="_blank">
-                <img src="datamachina/logos/whirlpoll.png" />
-            </a>
+				<img src="datamachina/logos/whirlpoll.png" />
+			</a>
 			<a href="https://www.mrs.com.br/" target="_blank">
-                <img src="datamachina/logos/mrs.png" />
-            </a>
+				<img src="datamachina/logos/mrs.png" />
+			</a>
 			<a href="https://trutec.com.br/" target="_blank">
-                <img src="datamachina/logos/trutec1.png" />
-            </a>
+				<img src="datamachina/logos/trutec1.png" />
+			</a>
 			<a href="https://www.votorantimcimentos.com.br/" target="_blank">
-                <img src="datamachina/logos/Prancheta 1votorantim 1.svg" />
-            </a>
+				<img src="datamachina/logos/Prancheta 1votorantim 1.svg" />
+			</a>
 			<a href="https://www.aesbrasil.com.br/pt-br" target="_blank">
-                <img src="datamachina/logos/aes.svg" />
-            </a>
+				<img src="datamachina/logos/aes.svg" />
+			</a>
 			<a href="http://www.gruporeciclabr.com.br/pt/" target="_blank">
-                <img src="datamachina/logos/recicla.png" />
-            </a>
+				<img src="datamachina/logos/recicla.png" />
+			</a>
 			<a href="http://www.labcidade.fau.usp.br/" target="_blank">
-                <img src="datamachina/logos/labcidade.png" />
-            </a>
+				<img src="datamachina/logos/labcidade.png" />
+			</a>
 			<a href="https://cestanobre.com.br/" target="_blank">
-                <img src="datamachina/logos/nobrecesta.png" />
-            </a>
+				<img src="datamachina/logos/nobrecesta.png" />
+			</a>
 			<a href="https://www.poloplanejamento.com/" target="_blank">
-                <img src="datamachina/logos/polo.png" />
-            </a>
+				<img src="datamachina/logos/polo.png" />
+			</a>
 			<a href="https://mercadofavo.com/" target="_blank">
-                <img src="datamachina/logos/favo.svg" />
-            </a>
+				<img src="datamachina/logos/favo.svg" />
+			</a>
 			<a href="https://www.trust.com.br/" target="_blank">
-                <img src="datamachina/logos/Prancheta 1trust.svg" />
-            </a>
+				<img src="datamachina/logos/Prancheta 1trust.svg" />
+			</a>
 			<a href="https://www.bhrgastronomia.com.br/" target="_blank">
-                <img src="datamachina/logos/bhr.png" />
-            </a>
+				<img src="datamachina/logos/bhr.png" />
+			</a>
 		</section>
 
 		<div className="container-comentarios">
 			<div className="temos-orgulho">
 				<p className='title'>
-                    E temos orgulho de ter <br /> nossos clientes como <br /> parceiros
-				    <div className="seta-2">↓</div>
+					E temos orgulho de ter <br /> nossos clientes como <br /> parceiros
+					<div className="seta-2">↓</div>
 				</p>
 			</div>
 			<div className="comentarios">
@@ -261,7 +271,7 @@ export default function Home() {
 				</a>
 			</div>
 		</div>
-		                
+						
 		{/* FOOTER */}
 		
 		<footer>
@@ -269,17 +279,17 @@ export default function Home() {
 				<img className="footer__logo" src="./dm-logo-name.svg" alt="" />
 					
 				<div className="menu__empresa">
-					<a className="first" href="#">data machina</a>
+					<Link className="first" href="/">data machina</Link>
 					<a className="links" href="#inicio">início</a>
-					<a className="links" href="#inicio">soluções</a>
-					<a className="links" href="#nossas-solucoes">clientes</a>
-					<a className="links" href="#premio">prêmios</a>
-					<a className="links" href="#aceleracao">aceleração</a>
+					<a className="links" href="#solucoes">soluções</a>
+					<a className="links" href="#clientes">clientes</a>
+					<a className="links" href="#premios">prêmios</a>
+					<a className="links" href="#aceleracoes">aceleração</a>
 					<a className="links" href="#contato">contato</a>
 				</div>
 
 				<div className="menu__empresa">
-					<a className="first" href="#Mapalytics">mapalytics</a>
+					<Link className="first" href="/mapalytics">mapalytics</Link>
 					<a className="links" href="">apresentação</a>
 					<a className="links" href="">o que é o mapalytics</a>
 					<a className="links" href="">segmentos atendidos</a>
@@ -322,12 +332,16 @@ export default function Home() {
 			</div>
 		</footer>
 
-		
+		{/* Google Tag Manager (noscript) */}
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW48QX9"height="0" width="0" style={{ display: 'none; visibility:hidden' }}></iframe></noscript>
+		{/* End Google Tag Manager (noscript) */}
+
+		{/* Bootstrap */}
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
 			integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
 			crossOrigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 			crossOrigin="anonymous"></script>
-    </>)
-}
+	</>
+)}

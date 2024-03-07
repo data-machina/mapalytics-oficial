@@ -1,3 +1,17 @@
+.controlls {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 100%;
+	bottom: 40px;
+	z-index: 2;
+}
+
+.controlls * {
+	transition: .2s;
+}
+
 .carrossel__component {
 	position: relative;
 	display: flex;
@@ -12,35 +26,20 @@
 	transition: .5s;
 }
 
-.controlls {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	margin: auto;
-	width: 100%;
-	bottom: 40px;
-	gap: 10px;
-	z-index: 2;
-	transition: .5s;
+.controlls__btn {
+	padding: 20px;
+	border: none;
+	cursor: pointer;
+	background: transparent;
 }
 
-.controlls__btn {
+.controlls__btn:hover .controlls__circle, .controlls__btn--selected .controlls__circle {
+	background: var(--dm_rosa_00);
+}
+
+.controlls__circle {
 	background: #D9D9D9;
 	width: 12px;
 	height: 12px;
 	border-radius: 50%;
-	border: none;
-	transition: .5s;
-	cursor: pointer;
-}
-
-.controlls__btn:hover, .controlls__btn--selected {
-	background: var(--dm_rosa_00);
-	transition: .5s;
-}
-
-@media screen and (max-width: 800px) {
-	.controlls {
-		gap: 30px;
-	}
 }

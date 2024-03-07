@@ -158,7 +158,7 @@ p {
 	position: absolute;
 	pointer-events: none;
 	bottom: 100%;
-	height: 99px;
+	height: 100px;
 	width: 100%;
 }
 
@@ -245,6 +245,7 @@ nav a:hover {
 .header__option:hover {
 	transition: .2s;
 	background: #FCD3E5;
+	color: var(--dm_preto_00);
 }
 
 .header__dropdown::before {

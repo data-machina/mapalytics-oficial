@@ -1,15 +1,13 @@
 'use client'
 import './datamachina.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Script from 'next/script'
-
+import { Carrossel } from "../../components/Carrousel/Carrossel";
 import Link from 'next/link'
 
 export default function Home() {
 return(
 	<>
 		<GoogleAnalytics gaId="GTM-KW48QX9" />
-	
 	
 		{/* Bootstrap */}
 
@@ -18,7 +16,6 @@ return(
 			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 			crossOrigin="anonymous"
 		></link>
-
 
 		<header>
 				<img className="header__logo" src="./dm-logo-name.svg" alt="Data Machina" />
@@ -35,17 +32,16 @@ return(
 						</div>
 					</div>
 
-					<div className="dropdown">
+					<div className="dropdown dropdown--novo">
 						<Link className="dropdown__link" href="/mapalytics">mapalytics</Link>
 					</div>
 				</nav>
 		</header>
 
-
-		<div className="dm-banner" id="inicio">
+		<section className="dm-banner" id="inicio">
 			<div className='dm-banner__container'>
 				<div className="dm-banner__texts">
-					<h1> <em>/</em> Gostamos <br /> de problemas <br /> difíceis!</h1>
+					<h1 className='dm-banner__h1'><em>/</em> Gostamos <br /> de problemas <br /> difíceis!</h1>
 					<p>
 						Somos pesquisadores e empreendedores com cultura de inovação aplicada,
 						prototipação e ruptura de paradigmas, somos curiosos, dedicados e disruptivos.
@@ -54,28 +50,27 @@ return(
 
 				{/* Vídeo */}
 
-				<iframe
-					className="banner__iframe" src="https://www.youtube.com/embed/bQjCKkZRVbA"
-					title="Uma nova Data Machina"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				></iframe>
+				<iframe className="banner__iframe" src="https://www.youtube.com/embed/bQjCKkZRVbA" title="Uma nova Data Machina" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 			</div>
-		</div>
+		</section>
 	
+		{/*  */}
 
-		<div className="inquietude" id="inquietude">
+		<section className="inquietude" id="inquietude">
 			<p className='title' >Nossa inquietude nos leva a propor soluções para <br /> o dia-a-dia com tecnologias de fronteira</p>
-		</div>
+		</section>
+
+		{/*  */}
 
 		<section className="produtos">
 			<div className="link__ancor" id="solucoes"></div>
-			{/* <!-- 1 -- > */}
+			{/* 1 */}
 			
 			<div className="produtos__negocio--1" id="Mapalytics">
 
 				<div className="descricao-1">
 					<div className="container-data-machina">
-						<p className="dm-titulo-1">dm mapalytics</p>
+						<p className="dm-titulo-1 title">dm mapalytics</p>
 						<p className="dm-titulo-2">
 							Para empresas de varejo que querem conhecer melhor sua rede de atuação ou para
 							empresas de seguros e assistências técnicas que querem mapear oportunidades e prestadores de
@@ -167,56 +162,40 @@ return(
 			</a>
 		</section>
 
-		<div className="container-comentarios">
-			<div className="temos-orgulho">
+		{/* COMENTÁRIOS */}
+
+		<section className="comentarios">
+			<div className="comentarios__temos-orgulho">
 				<p className='title'>
-					E temos orgulho de ter <br /> nossos clientes como <br /> parceiros
-					<div className="seta-2">↓</div>
+					E temos orgulho de ter <br /> nossos clientes como <br /> <span className="comentarios__arrow">parceiros</span>
 				</p>
 			</div>
-			<div className="comentarios">
-				<div id="carouselExampleControls" className="carousel cnt slide" data-bs-ride="carousel">
-					<div className="carousel-inner">
-						<div className="carousel-item active">
-							<img className="carrossel-img-1" src="datamachina/logos/whirlpoll.png" />
-							<p>"A Data Machina entendeu a nossa necessidade de uma forma muito rápida e tem nos ajudado
-								a converter os desafios em oportunidades"</p>
-							<p className="fulano">/Gelson Lira</p>
-						</div>
-						<div className="carousel-item">
-							<img className="carrossel-img-1" src="datamachina/logos/polo.png" />
-							<p>"A Data Machina nos ajudou a agilizar nosso processo de pesquisa. De forma muito
-								inovadora conseguimos ter resultados acima do esperado."</p>
-							<p className="fulano">/Thiago Zeidler</p>
-						</div>
-					</div>
-					<div className="button-carrossel-container">
-						<button className="carrossel-button teste" type="button" data-bs-target="#carouselExampleControls"
-							data-bs-slide="next">
-							<img src="datamachina/img/elementos/seta.svg" alt="" />
-							<span className="visually-hidden">Next</span>
-						</button>
-						<button className="carrossel-button seta" type="button" data-bs-target="#carouselExampleControls"
-							data-bs-slide="prev">
-							<img src="datamachina/img/elementos/seta.svg" alt="" />
-						
-							<span className="visually-hidden">Previous</span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+			<Carrossel>
+				<section className="carrossel__container">
+					<img className="comentarios__img" src="datamachina/logos/whirlpoll.png" />
+					<p className='comentarios__texts'>
+						"A Data Machina entendeu a nossa necessidade de uma forma muito rápida e tem nos ajudado
+						a converter os desafios em oportunidades"
+					</p>
+					<p className="comentarios__fulano">/Gelson Lira</p>
+				</section>
 
-		<div className="premio">
+				<section className="carrossel__container">
+					<img className="comentarios__img" src="datamachina/logos/polo.png" />
+					<p className='comentarios__texts'>
+						"A Data Machina nos ajudou a agilizar nosso processo de pesquisa. De forma muito
+						inovadora conseguimos ter resultados acima do esperado."
+					</p>
+					<p className="comentarios__fulano">/Thiago Zeidler</p>
+				</section>
+			</Carrossel>
+		</section>
+
+		<section className="premio">
 			<div className="link__ancor" id="premios"></div>
 			<div className='premio__container'>
 				<div className="video-premio">
-					<iframe
-						className="iframe-premio"
-						src="https://www.youtube.com/embed/Mt3nyO5tUs4"
-						title="YouTube video player"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					></iframe>
+					<iframe className="iframe-premio" src="https://www.youtube.com/embed/Mt3nyO5tUs4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 				</div>
 				<div className="logo-premio">
 					<p className="title">
@@ -227,14 +206,14 @@ return(
 					<p className="p-premio">Fomos reconhecidos no Prêmio 100 Open Startups pelo 2º ano consecutivo. Dessa vez fomos eleitos a 3ª melhor citytech de 2022.</p>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div className="programas-de-aceleracao">
+		<section className="programas-de-aceleracao">
 			<div className="link__ancor" id="aceleracoes"></div>
 			<p className='title'>Vários programas de aceleração nos ajudaram a <br /> aprimorar nossos produtos</p>
-		</div>
+		</section>
 
-		<div className="marcas" id="clientes">
+		<section className="marcas marcas--2" id="clientes">
 			<a href="http://adesampa.com.br/" target="black">
 				<img src="datamachina/logos/adesampa.png" alt=""/>
 			</a>
@@ -253,19 +232,21 @@ return(
 			<a href="https://www.gov.br/startuppoint/pt-br/programas/ia2-mctic" target="black">
 				<img src="datamachina/logos/ia2.png" alt=""/>
 			</a>
-		</div>
+		</section>
 
-		<div className="conhecer__nos">
+		{/* CONHECER */}
+
+		<section className="conhecer__nos">
 			<div className="link__ancor" id="contato"></div>
-			<div className="quer-nos-conhecer">
+			<div className="conhecer__quer-nos">
 				<p>
 					Alguma das nossas soluções te interessou? Ou quer saber como resolver
 					outro problema?
 				</p>
-				<div className="manda">
+				<div className="manda title">
 					Manda um e-mail <br /> pra gente
+					<p className="seta-1">→</p>
 				</div>
-				<p className="seta-1">→</p>
 			
 				<a href="mailto:contato@datamachina.com.br">
 					<form className="conhecer__email">
@@ -273,7 +254,7 @@ return(
 					</form>
 				</a>
 			</div>
-		</div>
+		</section>
 						
 		{/* FOOTER */}
 		
@@ -323,7 +304,7 @@ return(
 						<img className="footer__logo--dm" src="./dm-white.svg" alt="" />
 					</div>
 					<Link href="/mapalytics">
-						<img className='footer__mapalytics--logo' src="./mapalyticsbranco.svg" alt="" />
+						<img className='footer__mapalytics--logo' src="./mapalyticscinza.svg" alt="" />
 					</Link>
 				</div>
 				<div className="footer__bottom--items">
@@ -337,10 +318,10 @@ return(
 
 		{/* Bootstrap */}
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-			integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-			crossOrigin="anonymous"></script>
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-			crossOrigin="anonymous"></script>
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossOrigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossOrigin="anonymous"></script>
 	</>
 )}

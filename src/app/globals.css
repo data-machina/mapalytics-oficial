@@ -55,6 +55,12 @@ a {
 	text-decoration: none !important;
 }
 
+p {
+	line-height: 24px;
+	font-size: 18px;
+	margin-bottom: 0;
+}
+
 .width {
 	max-width: 1100px;
 	width: 100%;
@@ -74,18 +80,6 @@ a {
 	gap: 20px;
 	position: relative;
 }
-
-p {
-	line-height: 24px;
-	font-size: 18px;
-	margin-bottom: 0;
-}
-
-.slide__container {
-	display: block;
-	min-width: 100%;
-}
-
 .button__border {
 	border: none;
 	border: 1px solid var(--dm_creme_02);
@@ -182,7 +176,6 @@ header img {
 	width: 200px;
 }
 
-
 nav {
 	display: flex;
 	align-items: center;
@@ -210,6 +203,15 @@ nav a:hover {
 	display: flex;
 	justify-content: center;
 	padding: 20px 0;
+}
+
+.dropdown--novo::after {
+	content: 'novo';
+	position: absolute;
+	right: -10px;
+	top: 0px;
+	color: var(--dm_rosa_00);
+	font-size: 14px;
 }
 
 .dropdown * {
@@ -271,6 +273,52 @@ nav a:hover {
 	pointer-events: initial;
 	opacity: 1;
 }
+
+/* Conhecer */
+
+.manda {
+	margin-bottom: 30px;
+}
+
+.seta-1 {
+	position: absolute;
+	display: inline-block;
+	font-size: 40px;
+	font-weight: 600;
+	left: 175px;
+	bottom: 68px;
+	color: var(--dm_creme_02);
+}
+
+.conhecer__email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 50px;
+    border: 1px solid var(--dm_creme_02);
+    transition: 0.5s;
+    cursor: pointer;
+    color: var(--dm_creme_02);
+}
+
+.conhecer__email:hover {
+    background: var(--dm_creme_02);
+    color: black;
+    transition: 0.3s;
+}
+
+
+.conhecer__nos {
+    position: relative;
+    background: var(--dm_azul_00);
+    width: 100%;
+    min-height: 400px;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* Footer */
 
@@ -410,6 +458,84 @@ footer {
 	gap: 32px;
 }
 
+
+/* Conhecer */
+
+
+.conhecer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.conhecer__quer-nos {
+    margin: auto;
+    color: var(--dm_creme_02);
+    width: 300px;
+    position: relative;
+}
+
+.conhecer__manda {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+
+.conhecer__seta {
+    position: absolute;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    left: 175px;
+    bottom: 78px;
+    color: var(--dm_creme_02);
+}
+
+.conhecer__melhor {
+	background: var(--dm_azul_00);
+	width: 100%;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+}
+
+.conhecer__quer {
+	margin: auto;
+	color: var(--dm_creme_02);
+	width: 300px;
+	position: relative;
+}
+
+/*  */
+
+
+@media (max-width: 1200px) {
+	
+    .conhecer__nos {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .conhecer__quer-nos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conhecer__seta {
+        left: 0;
+        bottom: 22px;
+        cursor: default;
+        position: relative;
+    }
+
+}
+
 @media screen and (max-width: 1000px) {
 	/* Globais */
 
@@ -446,6 +572,17 @@ footer {
 
 @media screen and (max-width: 800px) {
 
+	/* Globais */
+	
+	.map-h1 {
+		font-size: 28px;
+	}
+	
+	.title {
+		font-size: 24px;
+		line-height: 30px;
+	}
+
 	/* Footer */
 
 	.footer__logo {
@@ -466,6 +603,7 @@ footer {
 
 	.seta-1 {
 		left: 75px;
+		bottom: 75px;
 	}
 	
 	footer * {
@@ -475,25 +613,43 @@ footer {
 
 @media screen and (max-width: 600px) {
 
-	/* Globais */
-	
-	.map-h1 {
-		font-size: 28px;
-	}
-	
-	.map-h2, .title {
-		font-size: 24px;
-		line-height: 30px;
-	}
+    .conhecer__nos {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-	/*  */
-	
-	.seta-1 {
-		bottom: 72px;
-		left: 75px;
-	}
-	
+    .conhecer__quer-nos {
+        width: calc(100% - 20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .manda {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .conhecer__seta {
+        position: initial;
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .conhecer__email {
+        width: 100%;
+        font-size: 14px;
+    }
+
 }
+
 
 @media screen and (max-width: 500px) {
 

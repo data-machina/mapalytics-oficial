@@ -22,7 +22,7 @@ export const Carrossel: React.FC<CarrouselProps> = ({ children }) => {
                 obj.classList.remove('controlls__btn--selected')
             })
             btnRef.current[currentPass].classList.add('controlls__btn--selected') //  adiciona a classe 'controlls__btn--selected' no slide atual
-        }, 7000); // Tempo para que o slide seja passdo automáticamente
+        }, 10000); // Tempo para que o slide seja passdo automáticamente
 
         return () => {
         if (intervalRef.current !== null) clearInterval(intervalRef.current); // Limpa o intervalo quando o componente desmontar

@@ -8,18 +8,49 @@
 	overflow: hidden;
 }
 
+
+.banner::after {
+    content: '↓';
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    color: var(--dm_rosa_00);
+    width: 100%;
+    bottom: 40px;
+    z-index: 2;
+	text-shadow: 0px 0px 12px rgba(0, 0, 0, 1);
+    animation: infinite 4s arrowBannerMap;
+}
+
+@keyframes arrowBannerMap {
+    0% {
+		transform: translatey(0);
+	}
+	20% {
+		transform: translatey(0);
+	}
+	50% {
+		transform: translatey(30px);
+	}
+	100% {
+		transform: translatey(0);
+	}
+}
+
 .banner__container {
-	display: grid;
-    grid-template-columns: 3fr max-content;
-    padding: 100px 0;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
 	height: 100%;
 	max-width: 1200px;
 	min-height: 800px;
-	margin: auto;
+	margin: 0 auto;
+	padding: 100px 0 ;
     color: var(--dm_creme_02);
 }
 
 .banner__texts {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -43,17 +74,15 @@ h1 {
 }
 
 .banner__logo {
-	margin-top: 1rem;
+	right: 0;
+	top: 0;
 	height: 42px;
 	object-fit: contain;
-	flex-shrink: 0;
 	z-index: 2;
 }
 
-
 .banner__video--container {
 	position: absolute;
-	padding: 10px;
 	width: 100%;
 	height: 100%;
     left: 0;
@@ -76,13 +105,21 @@ h1 {
 	top: 260px;
 }
 
+.banner__video--book {
+	position: absolute;
+    min-height: 640px;
+    height: 69vh;
+    width: 100%;
+    right: max(-140px, -11vw);
+    top: 260px;
+}
+
 /* Mapalytics */
 
 .mapalytics {
 	position: relative;
     background: var(--dm_creme_00);
-	min-width: 100%;
-	min-height: 458px;
+	min-height: 560px;
 }
 
 .mapalytics__container--1, .mapalytics__container--2 {
@@ -90,20 +127,20 @@ h1 {
 	align-items: center;
 	position: relative;
 	height: 100%;
-	width: calc(100% - 40px);
-	max-width: 1200px;
+	width: 100%;
+	gap: 60px;
 	margin: auto;
 }
 
 .mapalytics__container--1 {
-	grid-template-columns: 1fr 1.4fr;
+	grid-template-columns: 360px 1fr;
 	gap: 40px;
+	padding-left: 100px;
 }
 
-.container__video--1 {
-	position: relative;
-	height: 100%;
-	width: 100%;
+.mapalytics__container--2 {
+	grid-template-columns: 1fr 314px;
+	padding-right: 100px;
 }
 
 .mapalytics__texts {
@@ -119,36 +156,18 @@ h1 {
 .mapalytics__video--1  {
 	height: 100%;
 	width: 100%;
-	object-position: bottom right;
-	object-fit: cover;
-}
-
-
-.mapalytics__video--1 {
-	position: absolute;
-	right: 0;
 }
 
 .mapalytics__video--ctn-1 {
-	height: 100%;
+	height: 101%;
 	width: 100%;
 	object-fit: cover;
 }
 
-.container__video--2 {
-	position: absolute;
-	display: grid;
-	height: 100%;
-	width: 100%;
-}
-
-.container__video--2, .mapalytics__container--2 {
-	grid-template-columns: 810px 1fr;
-}
 
 .mapalytics__video--ctn-2 {
 	width: 100%;
-	height: 100%;
+	height: 101%;
 	object-fit: cover;
 }
 
@@ -158,12 +177,10 @@ h1 {
 }
 
 .map-h2 {
-	font-size: 34px;
-	font-weight: 600;
 	margin-bottom: 15px;
 	color: var(--dm_rosa_00);
+	font-family: "roboto";
 	z-index: 2;
-	line-height: 38px
 }
 
 .mapalytics__map {
@@ -270,7 +287,6 @@ h1 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 70px;
-    min-width: 100%;
 	padding: 100px var(--margins) 100px 40px;
 	color: var(--dm_creme_02);
 }
@@ -400,14 +416,20 @@ h1 {
 	margin-left: var(--margins);
 }
 
+.forms__size {
+	max-width: 500px;
+	width: calc(100% - 40px );
+}
+
 .forms__formulario {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
 	background: var(--dm_creme_02);
-	padding: 100px 0;
+	padding: 40px 0;
 	width: 100%;
+	height: 100%;
 }
 
 .forms__formulario::after {
@@ -542,43 +564,8 @@ h1 {
 	color: var(--dm_creme_02);
 }
 
-.conhecer {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
 
-.conhecer__melhor {
-	background: var(--dm_azul_00);
-	width: 100%;
-	height: 400px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 16px;
-}
 
-.conhecer__quer {
-	margin: auto;
-	color: var(--dm_creme_02);
-	width: 300px;
-	position: relative;
-}
-
-.manda {
-	margin-bottom: 30px;
-}
-
-.seta-1 {
-	position: absolute;
-	display: inline-block;
-	font-size: 30px;
-	font-weight: 600;
-	left: 175px;
-	bottom: 78px;
-	color: var(--dm_creme_02);
-}
 
 .email {
 	display: flex;
@@ -645,8 +632,27 @@ input[type="email"],
 	}
 
 	.banner__container {
-		margin: 0 var(--margins) 0 var(--margins);
+		margin: 0 var(--margins);
 	}
+	
+    .mais {
+        background: none;
+        height: 35px;
+        width: 136px;
+        padding-left: 22px;
+        position: relative;
+        font-size: 12px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .mais__arrow {
+        width: 35px;
+        height: 35px;
+        right: -35px;
+        display: flex;
+    }
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -677,6 +683,7 @@ input[type="email"],
 	.video {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		overflow: hidden;
 	}
 
@@ -687,6 +694,10 @@ input[type="email"],
 		height: 100%;
 		bottom: initial;
 		top: initial;
+	}
+
+	.banner__logo {
+		margin-top: 40px;
 	}
 
 	/* Formulário */
@@ -714,11 +725,16 @@ input[type="email"],
 	}
 	/* --1 */
 
-	.mapalytics__container--1{
+	.mapalytics__container--1 {
 		display: flex;
 		flex-direction: column;
+		padding: 0;
 	}
 	
+	.mapalytics__texts {
+		padding: 0 var(--margins);
+	}
+
 	.mapalytics__video--ctn-1 {
 		object-fit: contain;
 		object-position: bottom;
@@ -737,31 +753,29 @@ input[type="email"],
 		object-position: bottom;
 	}
 
-	.container__video--2, .mapalytics__container--2 { 
+	.mapalytics__container--2 { 
 		grid-template-columns: 1.6fr 1fr;
 		display: flex;
-		flex-direction: column;
+		padding: 0;
+		flex-direction: column-reverse
 	}
 
 	.carrossel__2 {
 		margin: 0;
 	}
 
-	.container__video--2 {
-		padding-top: 320px;
-	}
-
-	.mapalytics__container--2 {
-		padding-bottom: 200px;
-	}
-
 }
 
 @media screen and (max-width: 800px) {
 
-	.alimentacao__container--1, .alimentacao__container--2, .carrossel__2 {
+	.alimentacao__container--2, .carrossel__2 {
 		display: flex;
 		flex-direction: column;
+	}
+	
+	.alimentacao__container--1 {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 
 	.forms__container {
@@ -799,16 +813,20 @@ input[type="email"],
 	.basico__column-2 {
 		border-bottom: 1px solid var(--dm_rosa_00);
 	}
+
 }
 
 @media screen and (max-width: 600px) {
+
+	.video {
+		margin-top: 30px;
+		height: 380px;
+	}
 
 	.basico__column-2 {
 		display: flex;
 		flex-direction: column;
 		gap: 0;
 	}
-
-	
 
 }

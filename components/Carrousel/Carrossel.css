@@ -18,6 +18,7 @@
     width: 100%;
 	min-height: 200px;
 	overflow: hidden;
+	height: 100%;
 }
 
 .carrossel__slider {
@@ -42,4 +43,8 @@
 	width: 12px;
 	height: 12px;
 	border-radius: 50%;
+}
+
+.carrossel__container {
+    min-width: 100%;
 }

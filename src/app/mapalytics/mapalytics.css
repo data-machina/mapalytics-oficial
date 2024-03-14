@@ -1,3 +1,68 @@
+/* Popup */
+
+.popup * {
+	transition: .2s;
+}
+
+.popup {
+	position: fixed;
+	display: flex;
+	opacity: 0;
+	pointer-events: none;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	backdrop-filter: blur(4px);
+	z-index: 10;
+}
+
+.popup__container {
+	position: relative;
+	max-width: 500px;
+	min-width: 300px;
+	min-height: 600px;
+	padding: 40px;
+	border-radius: 6px;
+	background: var(--dm_creme_02);
+	box-shadow: 3px 3px 20px rgb(0 0 0 / 20%);
+}
+
+.popup__close {
+	position: absolute;
+	background: none;
+	right: 20px;
+	top: 20px;
+	border: none;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.popup__close:hover {
+	opacity: 0.6;
+}
+
+.popup--closing {
+	animation: closePopup 1s;
+}
+
+@keyframes  closePopup {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.popup--active {
+	opacity: 1;
+	pointer-events: initial;
+	transition: 1s;
+}
+
 /* Banner */
 
 .banner {
@@ -418,7 +483,8 @@ h1 {
 
 .forms__size {
 	max-width: 500px;
-	width: calc(100% - 40px );
+	width: calc(100% - 40px);
+	min-height: 600px;
 }
 
 .forms__formulario {
@@ -606,26 +672,6 @@ input[type="email"],
 	margin-bottom: 15px;
 }
 
-.footer__mapalytics::after {
-	content: '';
-	position: absolute;
-	top: -15px;
-	z-index: 1;
-	left: 0;
-	background: var(--dm_rosa_00);
-	height: 4px;
-	width: 100%;
-}
-
-.footer__mapalytics {
-	position: relative;
-}
-
-.footer__mapalytics img {
-	height: 32px;
-	object-fit: contain;
-}
-
 @media screen and (max-width: 1200px) {
 	.banner__video--book {
 		right: -100px
@@ -634,24 +680,6 @@ input[type="email"],
 	.banner__container {
 		margin: 0 var(--margins);
 	}
-	
-    .mais {
-        background: none;
-        height: 35px;
-        width: 136px;
-        padding-left: 22px;
-        position: relative;
-        font-size: 12px;
-        margin-top: 20px;
-        cursor: pointer;
-    }
-
-    .mais__arrow {
-        width: 35px;
-        height: 35px;
-        right: -35px;
-        display: flex;
-    }
 
 }
 

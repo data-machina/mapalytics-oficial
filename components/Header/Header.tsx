@@ -1,14 +1,10 @@
 import Link from 'next/link'
 import './Header.css'
-import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from 'next/navigation'
-
 
 function Header(props: any) {
     const router = useRouter()
     const page = props.pageName // Identifica em qual rota o elemento atualmente
-    const dropDM = useRef<HTMLDivElement>(null);
-    const dropMAP = useRef<HTMLDivElement>(null);
 
     const showScroll = (whichPage: string, param: string) => {
         let elAltura = document.getElementById(param)?.getBoundingClientRect().y 
@@ -43,26 +39,26 @@ function Header(props: any) {
             <nav>
                 <div className="header__dropdown">
                     <Link className="header__dropdown--link" href="/">data machina</Link>
-                    <div className="header__dropdown--items" ref={dropDM}>
-                        <button className="header__option" onClick={() => showScroll("datamachina", "inicio")}>início</button>
-                        <button className="header__option" onClick={() => showScroll("datamachina", "solucoes")}>soluções</button>
-                        <button className="header__option" onClick={() => showScroll("datamachina", "clientes")}>clientes</button>
-                        <button className="header__option" onClick={() => showScroll("datamachina", "premios")}>prêmios</button>
-                        <button className="header__option" onClick={() => showScroll("datamachina", "aceleracoes")}>acelerações</button>
-                        <button className="header__option" onClick={() => showScroll("datamachina", "contato")}>contato</button>
+                    <div className="header__dropdown--items">
+                        <button className="header__option" onClick={()=> showScroll("datamachina", "inicio")}>início</button>
+                        <button className="header__option" onClick={()=> showScroll("datamachina", "solucoes")}>soluções</button>
+                        <button className="header__option" onClick={()=> showScroll("datamachina", "clientes")}>clientes</button>
+                        <button className="header__option" onClick={()=> showScroll("datamachina", "premios")}>prêmios</button>
+                        <button className="header__option" onClick={()=> showScroll("datamachina", "aceleracoes")}>acelerações</button>
+                        <button className="header__option" onClick={()=> showScroll("datamachina", "contato")}>contato</button>
                     </div>
                 </div>
 
                 <div className="header__dropdown">
                     <Link className="header__dropdown--link dropdown--novo" href="/mapalytics">mapalytics</Link>
-                    <div className="header__dropdown--items" ref={dropMAP}>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "apresentacao")}>apresentação</a>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "oquee")}>o que é o mapalytics</a>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "segmentos")}>segmentos atendidos</a>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "pacotes")}>pacotes e funcionalidades</a>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "peca")}>peça uma demonstração</a>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "material")}>material para empresas</a>
-                        <a className="header__option" onClick={()=> showScroll("mapalytics", "contato")}>contato</a>
+                    <div className="header__dropdown--items">
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "apresentacao")}>apresentação</button>
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "oquee")}>o que é o mapalytics</button>
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "segmentos")}>segmentos atendidos</button>
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "pacotes")}>pacotes e funcionalidades</button>
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "peca")}>peça uma demonstração</button>
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "material")}>material para empresas</button>
+                        <button className="header__option" onClick={()=> showScroll("mapalytics", "contato")}>contato</button>
                     </div>
                 </div>
             </nav>

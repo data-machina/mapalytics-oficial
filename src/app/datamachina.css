@@ -597,14 +597,6 @@ input[type="email"],
     transition: 0.2s;
 }
 
-.logo-zap {
-    z-index: 1;
-}
-
-.vagas {
-    font-size: 14px;
-}
-
 @media only screen and (max-width: 1700px) {
 
     .dm-titulo-2,
@@ -957,11 +949,6 @@ input[type="email"],
 
     .inputs-contato {
         width: 100%;
-    }
-
-    .menu__empresa,
-    .menu__solucoes {
-        font-size: 16px;
     }
 
     .comentarios__seta {

@@ -85,24 +85,6 @@ p {
 	gap: 20px;
 	position: relative;
 }
-.button__border {
-	border: none;
-	border: 1px solid var(--dm_creme_02);
-	color: var(--dm_creme_02);
-	height: 41px;
-	text-wrap: nowrap;
-	padding: 0 30px;
-	background: none;
-	font-size: 16px;
-	cursor: pointer;
-	transition: .2s;
-}
-
-.button__border:hover {
-	background:var(--dm_creme_02);
-	color:var(--dm_preto_00);
-	transition: .2s;
-}
 
 .btn__rosa {
 	background: var(--dm_rosa_00);

@@ -1,6 +1,7 @@
 "use client";
 import "./mapalytics.css";
-import React, { useEffect, MouseEvent } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import React, { useEffect, useRef } from 'react';
 
 import { Carrossel } from "../../../components/Carrousel/Carrossel";
 import Header from "../../../components/Header/Header";
@@ -8,7 +9,7 @@ import { Footer } from "../../../components/Footer/Footer";
 
 const PipedriveForm = () => {
     useEffect(() => {
-        const container = document.querySelector('.pipedriveWebForms');
+        const container = document.querySelector('.pipeBody');
 
         // Verifica se o script já foi inserido, se sim, remove
         const existingScript = container?.querySelector('script');
@@ -31,8 +32,42 @@ const PipedriveForm = () => {
 
     return (
         <div
-            className="pipedriveWebForms"
+            className="pipedriveWebForms pipeBody"
             data-pd-webforms="https://webforms.pipedrive.com/f/ckzzoUTBTKexrv9epaEihrOcjpzC0G7rDkD5Ax7qLY97IC4RMOlnZvphMYzFa5dYNZ"
+            dangerouslySetInnerHTML={{
+                __html: `<script src="https://webforms.pipedrive.com/f/loader"></script>`,
+            }}
+        />
+    );
+};
+
+const PipedriveFormPopup = () => {
+    useEffect(() => {
+        const container = document.querySelector('.popupFormularo');
+
+        // Verifica se o script já foi inserido, se sim, remove
+        const existingScript = container?.querySelector('script');
+        if (existingScript) {
+            existingScript.remove();
+        }
+
+        // Cria um novo script element
+        const script = document.createElement('script');
+        script.src = 'https://webforms.pipedrive.com/f/loader';
+        script.async = true;
+
+        // Insere o novo script element para que o script seja carregado e executado
+        container?.appendChild(script);
+
+        return () => {
+            script.remove();
+        };
+    }, []);
+
+    return (
+        <div
+            className="pipedriveWebForms popupFormularo"
+            data-pd-webforms="https://webforms.pipedrive.com/f/5X8CS4JADZCQKtJMrJiFKGiyiL5TFmetfSmi7VE8ZD8yn1YD1rF8XW4b7s2HLSou1Z"
             dangerouslySetInnerHTML={{
                 __html: `<script src="https://webforms.pipedrive.com/f/loader"></script>`,
             }}
@@ -43,36 +78,49 @@ const PipedriveForm = () => {
 let clickble = ['popup__close', 'mais', 'popup']
 let popupHandle = true
 
-const popup = (event: MouseEvent<HTMLDivElement>) => {
-    const elPopup = document.getElementById('popup')
-    
-    if(clickble.includes(event.target?.classList[0])){
-        if(popupHandle) {
-            elPopup?.classList.add('popup--active')
-            document.body.classList.add('body--pd')
-            popupHandle = false
-        }
-        else {
-            elPopup?.classList.add('popup--closing')
-            setTimeout(() => {
-                document.body.classList.remove('body--pd')
-                elPopup?.classList.remove('popup--active')
-                elPopup?.classList.remove('popup--closing')
-                popupHandle = true
-            }, 1000)
+export function Popup() {
+    let popEl = useRef<HTMLDivElement>(null);
+    let popButton: any = useRef<HTMLButtonElement>(null)
+
+    let PopupClick = (event: any) => {
+        if(!popEl.current) return
+        if(clickble.includes(event.target.classList[0])){
+            if(popupHandle) {
+                popEl.current.classList.add('popup--active')
+                document.body.classList.add('body--pd')
+                popupHandle = false
+            }
+            else {
+                popEl.current.classList.add('popup--closing')
+                setTimeout(() => {
+                    if(!popEl.current) return
+                    document.body.classList.remove('body--pd')
+                    popEl.current.classList.remove('popup--active')
+                    popEl.current.classList.remove('popup--closing')
+                    popupHandle = true
+                }, 1000)
+            }
         }
     }
+    return (
+        <div onClick={PopupClick}>
+            <button className="mais" ref={popButton}>Baixar material<div className="mais__arrow">↓</div></button>
+
+            <div className="popup" ref={popEl}>
+                <div className="popup__container">
+                    <button className="popup__close">✕</button>
+                    <PipedriveFormPopup />
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default function Home() {
     return (
         <>
-            <div className="popup" id="popup" onClick={popup}>
-                <div className="popup__container">
-                    <button className="popup__close">✕</button>
-                    <PipedriveForm />
-                </div>
-            </div>
+        
+			<GoogleAnalytics gaId="GTM-NWD4VP64" />
         
             <Header pageName="mapalytics" />
             
@@ -106,7 +154,7 @@ export default function Home() {
 
                     <div className="banner__video--container">
                         <div className="video">
-                            <video className="banner__video--book" autoPlay muted loop>
+                            <video className="banner__video--book" autoPlay muted loop playsInline>
                                 <source src="./banner__video.mp4" type="video/mp4" />
                             </video>
                         </div>
@@ -128,7 +176,7 @@ export default function Home() {
                             </div>
 
                             <div className="mapalytics__video--1">
-                                <video className="mapalytics__video--ctn-1" loop muted autoPlay>
+                                <video className="mapalytics__video--ctn-1" loop muted autoPlay playsInline>
                                     <source src="./video__mapa.mp4" type="video/mp4" />
                                 </video>
                             </div>
@@ -138,7 +186,7 @@ export default function Home() {
                     <section className="mapalytics carrossel__container">
                         <div className="mapalytics__container--2">
                             <div className="mapalytics__video--2">
-                                <video className="mapalytics__video--ctn-2" loop muted autoPlay>
+                                <video className="mapalytics__video--ctn-2" loop muted autoPlay playsInline>
                                     <source src="./video__mapa--2.mp4" type="video/mp4" />
                                 </video>
                             </div>
@@ -159,13 +207,7 @@ export default function Home() {
                         <div className="alimentacao">
                             <div className="alimentacao__container--1">
                                 <div>
-                                    <video
-                                        className="alimentacao__animation"
-                                        src="/alimentacao.mp4"
-                                        autoPlay
-                                        muted
-                                        loop
-                                    ></video>
+                                    <video className="alimentacao__animation" src="/alimentacao.mp4" autoPlay muted loop playsInline></video>
                                 </div>
 
                                 <div className="text__container">
@@ -439,7 +481,7 @@ export default function Home() {
                 <section className="contato">
                     <div className="link__ancor" id="material"></div>
                     <div className="manda title">Tenha acesso ao nosso material para empresas <br /> clicando abaixo!</div>
-                    <button className="mais" onClick={popup}>Baixar material<div className="mais__arrow">↓</div></button>
+                    <Popup />
                 </section>
 
                 {/* CONHECER */}

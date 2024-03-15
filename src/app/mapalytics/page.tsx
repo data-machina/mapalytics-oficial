@@ -1,11 +1,12 @@
 "use client";
 import "./mapalytics.css";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 import { Carrossel } from "../../../components/Carrousel/Carrossel";
 import Header from "../../../components/Header/Header";
 import { Footer } from "../../../components/Footer/Footer";
+import { Popup } from "../../../components/Popup/Popup";
 
 const PipedriveForm = () => {
     useEffect(() => {
@@ -74,47 +75,6 @@ const PipedriveFormPopup = () => {
         />
     );
 };
-
-let clickble = ['popup__close', 'mais', 'popup']
-let popupHandle = true
-
-export function Popup() {
-    let popEl = useRef<HTMLDivElement>(null);
-    let popButton: any = useRef<HTMLButtonElement>(null)
-
-    let PopupClick = (event: any) => {
-        if(!popEl.current) return
-        if(clickble.includes(event.target.classList[0])){
-            if(popupHandle) {
-                popEl.current.classList.add('popup--active')
-                document.body.classList.add('body--pd')
-                popupHandle = false
-            }
-            else {
-                popEl.current.classList.add('popup--closing')
-                setTimeout(() => {
-                    if(!popEl.current) return
-                    document.body.classList.remove('body--pd')
-                    popEl.current.classList.remove('popup--active')
-                    popEl.current.classList.remove('popup--closing')
-                    popupHandle = true
-                }, 1000)
-            }
-        }
-    }
-    return (
-        <div onClick={PopupClick}>
-            <button className="mais" ref={popButton}>Baixar material<div className="mais__arrow">↓</div></button>
-
-            <div className="popup" ref={popEl}>
-                <div className="popup__container">
-                    <button className="popup__close">✕</button>
-                    <PipedriveFormPopup />
-                </div>
-            </div>
-        </div>
-    )
-}
 
 export default function Home() {
     return (
@@ -481,7 +441,9 @@ export default function Home() {
                 <section className="contato">
                     <div className="link__ancor" id="material"></div>
                     <div className="manda title">Tenha acesso ao nosso material para empresas <br /> clicando abaixo!</div>
-                    <Popup />
+                    <Popup>
+                        <PipedriveFormPopup />
+                    </Popup>
                 </section>
 
                 {/* CONHECER */}

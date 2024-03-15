@@ -157,6 +157,8 @@ footer {
 }
 
 .footer__button--border {
+	display: flex;
+	align-items: center;
 	border: 1px solid var(--dm_creme_02);
 	color: var(--dm_creme_02);
 	height: 42px;

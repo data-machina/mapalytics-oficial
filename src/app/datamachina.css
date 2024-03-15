@@ -451,38 +451,33 @@ h1 em {
 }
 
 .logo-premio {
-    height: 100%;
-    width: 400px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    height: 100%;
+    width: calc(100% - 100px);
+    max-width: 340px;
+    margin: auto;
 }
 
-.logo-premio img {
-    width: 200px;
+.premio__logo {
+    width: 340px;
     object-fit: contain;
 }
 
-.logo-premio p:first-child {
-    font-size: 34px;
-    font-weight: 600;
-    font-family: "Roboto slab";
-}
-
 .p-premio {
-    font-size: 21px;
+    font-size: 18px;
 }
 
-.iframe-premio {
+.premio__iframe {
     width: 576px;
     height: 325px;
     margin-right: 80px;
+    margin: auto;
 }
 
-
 .video-premio {
-    background: var(--dm_creme_02);
+    background: #EEEBE5;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -633,7 +628,7 @@ input[type="email"],
         z-index: 1;
     }
 
-    .iframe-premio {
+    .premio__iframe {
         width: 471px;
         height: 265px;
     }
@@ -658,10 +653,11 @@ input[type="email"],
         height: 300px;
     }
 
-    .logo-premio img {
+    .premio__logo {
         width: 200px;
         object-fit: contain;
     }
+
     .programas-de-aceleracao {
         font-size: 22px;
         height: 400px;
@@ -761,7 +757,7 @@ input[type="email"],
         height: 236px;
     }
 
-    .iframe-premio {
+    .premio__iframe {
         margin-bottom: 70px;
         margin-right: 0;
     }
@@ -838,7 +834,7 @@ input[type="email"],
         margin-bottom: 30px;
     }
 
-    .logo-premio img {
+    .premio__logo {
         width: 150px;
     }
 
@@ -853,7 +849,7 @@ input[type="email"],
         width: 100%;
     }
 
-    .iframe-premio {
+    .premio__iframe {
         width: 100%;
     }
     
@@ -898,7 +894,7 @@ input[type="email"],
         text-align: center;
     }
 
-    .iframe-premio {
+    .premio__iframe {
         margin-top: 30px;
     }
 
@@ -937,7 +933,7 @@ input[type="email"],
         flex-direction: column;
     }
 
-    .iframe-premio {
+    .premio__iframe {
         width: 95vw;
         height: 55vw;
     }

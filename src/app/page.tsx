@@ -175,15 +175,15 @@ export default function Home() {
 					<div className="link__ancor" id="premios"></div>
 					<div className='premio__container'>
 						<div className="video-premio">
-							<iframe className="iframe-premio" src="https://www.youtube.com/embed/Mt3nyO5tUs4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+							<iframe className="premio__iframe" width="560" height="315" src="https://www.youtube.com/embed/RBH_y4JyDkU?si=XB6EYOqMQye7HwKE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 						</div>
 						<div className="logo-premio">
 							<p className="title">
 								Muito trabalho só <br /> poderia resultar em <br /> reconhecimento
 							</p>
-							<img src="datamachina/img/top100.svg" alt="top100" />
+							<img className='premio__logo' src="datamachina/img/top100.jpg" alt="top100" />
 
-							<p className="p-premio">Fomos reconhecidos no Prêmio 100 Open Startups pelo 2º ano consecutivo. Dessa vez fomos eleitos a 3ª melhor citytech de 2022.</p>
+							<p className="p-premio">Fomos reconhecidos no Prêmio <strong><em>100 Open Startups</em></strong> pelo 3º anos consecutivos como uma das melhor <strong><em>citytech</em></strong> do <strong>Brasil</strong>.</p>
 						</div>
 					</div>
 				</section>

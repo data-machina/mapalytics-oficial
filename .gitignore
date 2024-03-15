@@ -6,6 +6,7 @@
 .firebaserc
 firebase.json
 firebase.js
+firebase-debug.log
 
 # dependencies
 /node_modules

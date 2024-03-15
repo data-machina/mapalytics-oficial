@@ -91,7 +91,7 @@ export const Footer = (props: any) => {
                             <img src="./icones/youtube.svg" alt="" />
                         </a>
                     </div>
-                    <button className="footer__button--border">material de imprensa</button>
+                    <a className="footer__button--border" href='https://drive.google.com/drive/folders/1JROi6IP1GcIUxz8vNDe-Pk0SZtx0Kcdd?usp=sharing' target='_black'>material de imprensa</a>
                 </div>
             </div>
            

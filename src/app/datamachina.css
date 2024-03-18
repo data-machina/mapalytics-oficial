@@ -55,6 +55,7 @@
     width: 100%;
     min-height: 320px;
     z-index: 1;
+    border: none;
 }
 
 .dm {
@@ -456,6 +457,7 @@ h1 em {
     width: 576px;
     height: 325px;
     margin: auto;
+    border: none;
 }
 
 .video-premio {

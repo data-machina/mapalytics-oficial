@@ -274,6 +274,10 @@ footer {
 		gap: 40px;
 	}
 
+	.footer__bottom {
+		margin-bottom: 90px;
+	}
+
 	.footer__links {
 		text-align: center;
 	}

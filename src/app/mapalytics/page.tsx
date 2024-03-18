@@ -76,10 +76,6 @@ const PipedriveFormPopup = () => {
     );
 };
 
-const flyTo = () => {
-    
-}
-
 export default function Home() {
     return (
         <>
@@ -108,7 +104,7 @@ export default function Home() {
                                     insights poderosos para impulsionar seu negócio.
                                 </p>
                             </div>
-                            <a className="mais" href="./dm_mapalytics.pdf" target="_blank">
+                            <a className="mais" href="#peca">
                                 Peça uma demonstração
                                 <div className="mais__arrow">↓</div>
                             </a>
@@ -431,11 +427,9 @@ export default function Home() {
                             <p className="forms__seta">→</p>
                         </div>
                         <div className="forms__formulario">
-                            {/* Forms Pipedrive */}
                             <div className="forms__size">
                                 <PipedriveForm />
                             </div>
-                            {/* End Forms Pipedrive */}
                         </div>
                     </div>
                 </section>

@@ -238,10 +238,9 @@ h1 em {
 .dm-titulo-2,
 .dm-titulo-4 {
     font-weight: 400;
-    font-size: 21px;
-    line-height: 30px;
     max-width: 100%;
     width: 100%;
+    font-size: 18px;
 }
 
 .dm-titulo-2 strong,
@@ -582,15 +581,6 @@ input[type="email"],
     transition: 0.2s;
 }
 
-@media only screen and (max-width: 1700px) {
-
-    .dm-titulo-2,
-    .dm-titulo-4 {
-        font-size: 16px;
-        line-height: 24px;
-    }
-}
-
 @media only screen and (max-width: 1475px) {
 
     .produtos {
@@ -601,7 +591,6 @@ input[type="email"],
     #Logística {
         margin: 75px 0 50px 0px;
     }
-
 }
 
 
@@ -997,6 +986,5 @@ input[type="email"],
             transform: translatey(0);
         }
     }
-    
     
 }

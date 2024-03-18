@@ -81,13 +81,13 @@ export const Footer = (props: any) => {
 
                     <div className="footer__sociais">
                         <div className="footer__link">
-                            <a href="https://www.instagram.com/data.machina/" target="blank">
+                            <a href="https://www.instagram.com/data.machina/" target="blank" aria-label="Estamos no Instagram!">
                                 <img src="./icones/instagram.svg" alt="" />
                             </a>
-                            <a href="https://www.linkedin.com/company/datamachina" target="blank" >
+                            <a href="https://www.linkedin.com/company/datamachina" target="blank" aria-label="Estamos no LinkedIn!">
                             <img src="./icones/linkedin.svg" alt="" />
                         </a>
-                        <a href="https://www.youtube.com/channel/UC53uChh4XmLF6-CwT6G_UJw" target="blank">
+                        <a href="https://www.youtube.com/channel/UC53uChh4XmLF6-CwT6G_UJw" target="blank" aria-label="Estamos no Yotuube!">
                             <img src="./icones/youtube.svg" alt="" />
                         </a>
                     </div>

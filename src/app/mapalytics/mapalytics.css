@@ -312,6 +312,8 @@ h1 {
 
 .basico__img {
 	width: 100%;
+	height: max-content;
+	object-fit: contain;
 }
 
 .btn__white {

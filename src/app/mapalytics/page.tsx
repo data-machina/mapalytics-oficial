@@ -137,7 +137,7 @@ export default function Home() {
 
                             <div className="mapalytics__video--1">
                                 <video className="mapalytics__video--ctn-1" loop muted autoPlay playsInline>
-                                    <source src="./video__mapa.mp4" type="video/mp4" />
+                                    <source src="./first_slide_video--notbook.mp4" type="video/mp4" />
                                 </video>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ export default function Home() {
                         <div className="mapalytics__container--2">
                             <div className="mapalytics__video--2">
                                 <video className="mapalytics__video--ctn-2" loop muted autoPlay playsInline>
-                                    <source src="./video__mapa--2.mp4" type="video/mp4" />
+                                    <source src="./first_slide_video--map.mp4" type="video/mp4" />
                                 </video>
                             </div>
 
@@ -168,7 +168,7 @@ export default function Home() {
                             <div className="alimentacao__container--1">
                                 <div>
                                     <video className="alimentacao__animation" loop muted autoPlay playsInline>
-                                        <source src="/alimentacao.mp4" type="video/mp4" />
+                                        <source src="./second_slide_video--alimentacao.mp4" type="video/mp4" />
                                     </video>
                                 </div>
 
@@ -208,8 +208,8 @@ export default function Home() {
                                     </p>
                                 </div>
                                 <div>
-                                    <video className="alimentacao__animation" autoPlay muted loop>
-                                        <source src="/construcao-civil.mp4" type="video/mp4" />
+                                    <video className="alimentacao__animation" autoPlay muted loop playsInline>
+                                        <source src="./second_slide_video--construcao-civil.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -231,8 +231,8 @@ export default function Home() {
                                     </p>
                                 </div>
                                 <div>
-                                    <video className="alimentacao__animation" autoPlay muted loop>
-                                        <source src="/assistencia-tecnica.mp4" type="video/mp4" />
+                                    <video className="alimentacao__animation" autoPlay muted loop playsInline>
+                                        <source src="./second_slide_video--assistencia-tecnica.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -258,13 +258,9 @@ export default function Home() {
                                     </p>
                                 </div>
                                 <div>
-                                    <video
-                                        className="alimentacao__animation"
-                                        src="/varejo__video.mp4"
-                                        autoPlay
-                                        muted
-                                        loop
-                                    ></video>
+                                    <video className="alimentacao__animation" autoPlay muted loop playsInline>
+                                        <source src="./second_slide_video--varejo.mp4" type="video/mp4" />
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +290,7 @@ export default function Home() {
                                 <p className="basico__title">
                                     Mapalytics <span className="title">Básico</span>
                                 </p>
-                                <img className="basico__img" src="./4_slide-3.png" alt="" />
+                                <img className="basico__img" src="./fourth_slide--basico.png" alt=""  width={300} height={300}/>
                                 <p className="basico__call">Encontre consumidores e leads</p>
                                 <p>
                                     O Pacote Básico vai otimizar sua força de vendas ao encontrar
@@ -341,7 +337,7 @@ export default function Home() {
                                 <p className="basico__title" style={{ color: "var(--dm_rosa_00)" }}>
                                     Mapalytics <span className="title">Integrado</span>
                                 </p>
-                                <img className="basico__img" src="./4_slide-2.png" alt="" />
+                                <img className="basico__img" src="./fourth_slide--integrado.png" alt="" height={300} width={300} />
                                 <p className="basico__call">Métricas de vendas</p>
                                 <p>
                                     O Pacote Integrado geolocaliza suas vendas, clientes e leads e
@@ -384,7 +380,7 @@ export default function Home() {
                                 <p className="basico__title">
                                     Mapalytics <span className="title">Completo</span>
                                 </p>
-                                <img className="basico__img" src="./4_slide-1.png" alt="" />
+                                <img className="basico__img" src="./fourth_slide--completo.png" alt="" height={300} width={300}  />
                                 <p className="basico__call">Deixe a IA descobrir por você</p>
                                 <p>
                                     O Pacote Completo oferece uma série de ferramentas de IA para trazer respostas mais assertivas e alertas para antecipar decisões antes que você precise tomá-las. Por exemplo, prever suas vendas por localidade para os próximos anos.

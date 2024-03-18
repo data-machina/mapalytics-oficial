@@ -33,7 +33,7 @@ export const Carrossel: React.FC<CarrouselProps> = ({children, ...props }) => {
                 if (intervalRef.current !== null) clearInterval(intervalRef.current)
                 intervalRef.current = window.setInterval(() => {
                     activeSlidesPass()
-                }, 1000); // Tempo para que o slide seja passdo automáticamente
+                }, 10000); // Tempo para que o slide seja passdo automáticamente
             }        
         }).observe(observador)
 

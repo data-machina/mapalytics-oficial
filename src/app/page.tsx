@@ -10,15 +10,7 @@ export default function Home() {
 	return (
 		<>
 			<GoogleAnalytics gaId="GTM-KW48QX9" />
-
-			{/* Bootstrap */}
-
-			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-				rel="stylesheet"
-				integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-				crossOrigin="anonymous"
-			></link>
-
+			
 			<Header pageName="datamachina" />
 
 			<main>
@@ -65,7 +57,7 @@ export default function Home() {
 									para dar total domínio estratégico e tático para seus planos de crescimento.
 								</p>
 
-								<Link className="mais mais__pink dm_mapalytics" href="/mapalytics">Saiba mais<div className="produtos__ir">↓</div></Link>
+								<Link className="mais mais__pink dm_mapalytics" href="/mapalytics">Saiba mais<div className="mais__arrow produtos__ir">↓</div></Link>
 							</div>
 						</div>
 						<div className="produtos__contorno">
@@ -177,13 +169,13 @@ export default function Home() {
 						<div className="video-premio">
 							<iframe className="premio__iframe" width="560" height="315" src="https://www.youtube.com/embed/RBH_y4JyDkU?si=XB6EYOqMQye7HwKE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 						</div>
-						<div className="logo-premio">
+						<div className="premio__logo">
 							<p className="title">
 								Muito trabalho só <br /> poderia resultar em <br /> reconhecimento
 							</p>
-							<img className='premio__logo' src="datamachina/img/top100.jpg" alt="top100" />
+							<img className='premio__logo--img' src="datamachina/img/top100.jpg" alt="top100" />
 
-							<p className="p-premio">Fomos reconhecidos no Prêmio <strong><em>100 Open Startups</em></strong> pelo 3º anos consecutivos como uma das melhor <strong><em>citytech</em></strong> do <strong>Brasil</strong>.</p>
+							<p className="p-premio">Fomos reconhecidos no Prêmio <strong><em>100 Open Startups</em></strong> pelo <strong>3º ano consecutivo</strong> como uma das <span className='premio__melhor'>melhores <strong><em>citytechs</em></strong></span> do <strong>Brasil</strong>.</p>
 						</div>
 					</div>
 				</section>
@@ -225,7 +217,7 @@ export default function Home() {
 						</p>
 						<div className="manda title">
 							Manda um e-mail <br /> pra gente
-							<p className="seta-1">→</p>
+							<div className="seta-1">→</div>
 						</div>
 
 						<a href="mailto:contato@datamachina.com.br">

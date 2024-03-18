@@ -155,17 +155,7 @@ h1 em {
     object-fit: cover;
 }
 
-.produtos__ir {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-90deg);
-    transition: 0.3s;
-}
-
-.mais__pink{
+.mais__pink {
     border-color: var(--dm_rosa_00);
     color: var(--dm_creme_02) !important;
 }
@@ -177,10 +167,6 @@ h1 em {
     background: var(--dm_rosa_00);
 }
 
-.mais__pink.produtos__ir {
-    border: 1px solid transparent;
-}
-
 .mais__pink:hover .produtos__ir {
     transition: 0.3s;
     background: var(--dm_preto_00);
@@ -190,20 +176,14 @@ h1 em {
 }
 
 .produtos__ir {
-    border: var(--dm_preto_00);
-    transition: 0.3s;
-}
-
-.produtos__ir {
     background: var(--dm_rosa_00);
-}
-
-.produtos__ir:hover {
-    border: 1px solid;
-}
-
-.produtos__ir:hover {
+    transition: 0.3s;
+    color: var(--dm_creme_02);
     border-color: var(--dm_rosa_00);
+}
+
+.produtos__ir:hover {
+    border: 1px solid var(--dm_rosa_00);
 }
 
 .descricao,
@@ -247,6 +227,7 @@ h1 em {
     flex-direction: column;
     justify-content: flex-start;
     width: 85%;
+    gap: 20px;
 }
 
 .dm-titulo-1 {
@@ -341,7 +322,7 @@ h1 em {
 
 .comentarios__arrow {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     width: max-content;
 }
@@ -443,26 +424,28 @@ h1 em {
 }
 
 .premio__container {
-    height: 600px;
     display: grid;
     grid-template-columns: 1fr 0.8fr;
     width: 100%;
     margin: auto;
 }
 
-.logo-premio {
+.premio__logo {
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: max-content;
+    gap: 20px;
     width: calc(100% - 100px);
     max-width: 340px;
     margin: auto;
 }
 
-.premio__logo {
+.premio__logo--img {
     width: 340px;
     object-fit: contain;
+    margin: auto;
 }
 
 .p-premio {
@@ -472,17 +455,22 @@ h1 em {
 .premio__iframe {
     width: 576px;
     height: 325px;
-    margin-right: 80px;
     margin: auto;
 }
 
 .video-premio {
-    background: #EEEBE5;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 100%;
+    padding: 40px 0;
+    background: #EEEBE5;
 }
 
+.premio__melhor {
+    background: var(--dm_azul_00);
+    color: var(--dm_creme_02);
+}
 
 .programas-de-aceleracao {
     position: relative;
@@ -633,10 +621,6 @@ input[type="email"],
         height: 265px;
     }
 
-    .dm-titulo-1 {
-        margin-bottom: 20px;
-    }
-
     .marcas {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -653,9 +637,8 @@ input[type="email"],
         height: 300px;
     }
 
-    .premio__logo {
-        width: 200px;
-        object-fit: contain;
+    .premio__logo--img {
+        width: 300px;
     }
 
     .programas-de-aceleracao {
@@ -674,7 +657,6 @@ input[type="email"],
         padding-left: 22px;
         position: relative;
         font-size: 12px;
-        margin-top: 20px;
         cursor: pointer;
     }
 
@@ -728,11 +710,10 @@ input[type="email"],
     /*  */
 
     .video-premio {
-        display: flex;
         margin: auto;
     }
 
-    .logo-premio {
+    .premio__logo {
         padding: 40px 0;
     }
 
@@ -749,17 +730,11 @@ input[type="email"],
         flex-direction: column-reverse;
         align-items: center;
         height: 100%;
-        width: calc(100% - 40px);
     }
 
     .banner__iframe {
         width: 460px;
         height: 236px;
-    }
-
-    .premio__iframe {
-        margin-bottom: 70px;
-        margin-right: 0;
     }
 
     h1 {
@@ -834,23 +809,15 @@ input[type="email"],
         margin-bottom: 30px;
     }
 
-    .premio__logo {
-        width: 150px;
-    }
-
-
     /* Premio */
 
-    .logo-premio {
-        width: 100%;
-    }
-    
-    .video-premio {
+    .premio__logo {
         width: 100%;
     }
 
     .premio__iframe {
-        width: 100%;
+        width: calc(100% - 40px);
+        height: 260px;
     }
     
 }
@@ -922,22 +889,15 @@ input[type="email"],
         color: var(--dm_creme_02);
     }
 
-    .dm-titulo-1{
+    .dm-titulo-1 {
         text-align: center;
         width: 100%;
-        margin-bottom: 20px;
     }
 
     .comentarios {
         display: flex;
         flex-direction: column;
     }
-
-    .premio__iframe {
-        width: 95vw;
-        height: 55vw;
-    }
-
     .banner__iframe {
         width: 95vw;
         height: 49vw;
@@ -964,7 +924,7 @@ input[type="email"],
         width: 80px;
     }
 
-    .logo-premio {
+    .premio__logo {
         width: calc(100% - 40px);
         padding: 40px 0;
         display: flex;
@@ -998,5 +958,43 @@ input[type="email"],
         width: 100px;
     }
 
+    .premio__logo--img {
+        width: 260px;
+    }
+    
+    .programas-de-aceleracao {
+        width: calc(100% - 40px);
+    }
 
+    .comentarios__arrow {
+        position: initial;
+    }    
+
+    .comentarios__temos-orgulho {
+        height: 300px;
+    }
+
+    .comentarios__arrow::before {
+        top: initial;
+        right: initial;
+        bottom: 60px;
+        left: 50%;
+    }
+
+    @keyframes comentsArrow {
+        0% {
+            transform: translatey(0);
+        }
+        20% {
+            transform: translatey(0);
+        }
+        50% {
+            transform: translatey(30px);
+        }
+        100% {
+            transform: translatey(0);
+        }
+    }
+    
+    
 }

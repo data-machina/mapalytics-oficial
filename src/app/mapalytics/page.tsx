@@ -76,6 +76,10 @@ const PipedriveFormPopup = () => {
     );
 };
 
+const flyTo = () => {
+    
+}
+
 export default function Home() {
     return (
         <>
@@ -104,7 +108,7 @@ export default function Home() {
                                     insights poderosos para impulsionar seu negócio.
                                 </p>
                             </div>
-                            <a className="mais mais--plus" href="./dm_mapalytics.pdf" target="_blank">
+                            <a className="mais" href="./dm_mapalytics.pdf" target="_blank">
                                 Peça uma demonstração
                                 <div className="mais__arrow">↓</div>
                             </a>
@@ -167,7 +171,9 @@ export default function Home() {
                         <div className="alimentacao">
                             <div className="alimentacao__container--1">
                                 <div>
-                                    <video className="alimentacao__animation" src="/alimentacao.mp4" autoPlay muted loop playsInline></video>
+                                    <video className="alimentacao__animation" loop muted autoPlay playsInline>
+                                        <source src="/alimentacao.mp4" type="video/mp4" />
+                                    </video>
                                 </div>
 
                                 <div className="text__container">
@@ -206,13 +212,9 @@ export default function Home() {
                                     </p>
                                 </div>
                                 <div>
-                                    <video
-                                        className="alimentacao__animation"
-                                        src="/construcao-civil.mp4"
-                                        autoPlay
-                                        muted
-                                        loop
-                                    ></video>
+                                    <video className="alimentacao__animation" autoPlay muted loop>
+                                        <source src="/construcao-civil.mp4" type="video/mp4" />
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +235,9 @@ export default function Home() {
                                     </p>
                                 </div>
                                 <div>
-                                    <video className="alimentacao__animation" src="/assistencia-tecnica.mp4" autoPlay muted loop></video>
+                                    <video className="alimentacao__animation" autoPlay muted loop>
+                                        <source src="/assistencia-tecnica.mp4" type="video/mp4" />
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -456,7 +460,7 @@ export default function Home() {
                         </p>
                         <div className="manda title">
                             Manda um e-mail <br /> pra gente
-                            <p className="seta-1">→</p>
+                            <div className="seta-1">→</div>
                         </div>
 
                         <a href="mailto:contato@datamachina.com.br">

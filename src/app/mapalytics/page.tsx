@@ -136,7 +136,7 @@ export default function Home() {
                             </div>
 
                             <div className="mapalytics__video--1">
-                                <video className="mapalytics__video--ctn-1" loop muted autoPlay playsInline>
+                                <video className="mapalytics__video--ctn-1" autoPlay muted loop playsInline>
                                     <source src="./first_slide_video--notbook.mp4" type="video/mp4" />
                                 </video>
                             </div>
@@ -146,7 +146,7 @@ export default function Home() {
                     <section className="mapalytics carrossel__container">
                         <div className="mapalytics__container--2">
                             <div className="mapalytics__video--2">
-                                <video className="mapalytics__video--ctn-2" loop muted autoPlay playsInline>
+                                <video className="mapalytics__video--ctn-2" autoPlay muted loop playsInline>
                                     <source src="./first_slide_video--map.mp4" type="video/mp4" />
                                 </video>
                             </div>
@@ -167,7 +167,7 @@ export default function Home() {
                         <div className="alimentacao">
                             <div className="alimentacao__container--1">
                                 <div>
-                                    <video className="alimentacao__animation" loop muted autoPlay playsInline>
+                                    <video className="alimentacao__animation" autoPlay muted loop playsInline>
                                         <source src="./second_slide_video--alimentacao.mp4" type="video/mp4" />
                                     </video>
                                 </div>

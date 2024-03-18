@@ -121,7 +121,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <Carrossel>
+                <Carrossel data-carrossel="carousel-1">
                     <section className="mapalytics carrossel__container">
                         <div className="link__ancor" id="oquee"></div>
                         <div className="mapalytics__container--1">
@@ -161,7 +161,7 @@ export default function Home() {
                     </section>
                 </Carrossel>
 
-                <Carrossel>
+                <Carrossel data-carrossel="carousel-2">
                     {/* 1 */}
                     <section className="carrossel__container">
                         <div className="alimentacao">
@@ -282,7 +282,7 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <Carrossel>
+                    <Carrossel data-carrossel="carousel-3">
                         {/* 1 */}
                         <section className="basico__column-2 carrossel__container">
                             <div className="link__ancor" id="pacotes"></div>

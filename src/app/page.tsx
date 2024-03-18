@@ -142,7 +142,7 @@ export default function Home() {
 							E temos orgulho de ter <br /> nossos clientes como <br /> <span className="comentarios__arrow">parceiros</span>
 						</p>
 					</div>
-					<Carrossel>
+					<Carrossel data-carrossel="carousel-data">
 						<section className="carrossel__container">
 							<img className="comentarios__img" src="datamachina/logos/whirlpoll.png" />
 							<p className='comentarios__texts'>

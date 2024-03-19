@@ -38,15 +38,7 @@ function Header(props: any) {
             <img className="header__logo" src="./dm-logo-name.svg" alt="Data Machina" />
             <nav>
                 <div className="header__dropdown">
-                    <Link className="header__dropdown--link" href="/">data machina</Link>
-                    <div className="header__dropdown--items">
-                        <button className="header__option" onClick={()=> showScroll("datamachina", "inicio")}>início</button>
-                        <button className="header__option" onClick={()=> showScroll("datamachina", "solucoes")}>soluções</button>
-                        <button className="header__option" onClick={()=> showScroll("datamachina", "clientes")}>clientes</button>
-                        <button className="header__option" onClick={()=> showScroll("datamachina", "premios")}>prêmios</button>
-                        <button className="header__option" onClick={()=> showScroll("datamachina", "aceleracoes")}>acelerações</button>
-                        <button className="header__option" onClick={()=> showScroll("datamachina", "contato")}>contato</button>
-                    </div>
+                    <Link className="header__dropdown--link" href="https://datamachina.com.br">data machina</Link>
                 </div>
 
                 <div className="header__dropdown">

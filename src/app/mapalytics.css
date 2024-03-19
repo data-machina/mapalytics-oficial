@@ -378,7 +378,7 @@ h1 {
 	justify-content: center;
 	color: var(--dm_creme_02);
 	position: absolute;
-	background-image: url('../../../public/icones/check__white.svg');
+	background-image: url('../../public/icones/check__white.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -390,7 +390,7 @@ h1 {
 }
 
 .background__white .basico__item::before { 
-	background-image: url('../../../public/icones/check.svg');
+	background-image: url('../../public/icones/check.svg');
 }
 
 .basico__item--first {

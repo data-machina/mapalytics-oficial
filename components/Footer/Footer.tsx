@@ -33,43 +33,13 @@ export const Footer = (props: any) => {
         }
     }
 
-    const rodape = page == 'datamachina' ?
-        (<>
-            <div className="dm-footer__mapalytics dm-footer--after">
-                <img className="footer__logo--dm" src="./dm-white.svg" alt="" />
-            </div>
-            <Link className="dm-footer__mapalytics" href="/mapalytics">
-                <img className='footer__mapalytics--logo' src="./mapalyticscinza.svg" alt="" />
-            </Link>
-        </>):
-        (
-            <>
-                <Link className="dm-footer__mapalytics" href='/'>
-                    <img className="footer__logo--dm" src="./dm.svg" alt="" />
-                </Link>
-                <div className="dm-footer__mapalytics map-footer--after">
-                    <img className='footer__mapalytics--logo' src="./mapalyticsbranco.svg" alt="" />
-                </div>
-            </>
-        )
-
     return (
             <footer>
                 <div className="footer__container">
                     <img className="footer__logo" src="./dm-logo-name.svg" alt="" />
 
                     <div className="footer__empresa">
-                        <Link className="footer__first" href="/">data machina</Link>
-                        <button className="footer__links" onClick={()=> showScroll("datamachina", "inicio")}>início</button>
-                        <button className="footer__links" onClick={()=> showScroll("datamachina", "solucoes")}>soluções</button>
-                        <button className="footer__links" onClick={()=> showScroll("datamachina", "clientes")}>clientes</button>
-                        <button className="footer__links" onClick={()=> showScroll("datamachina", "premios")}>prêmios</button>
-                        <button className="footer__links" onClick={()=> showScroll("datamachina", "aceleracoes")}>aceleração</button>
-                        <button className="footer__links" onClick={()=> showScroll("datamachina", "contato")}>contato</button>
-                    </div>
-
-                    <div className="footer__empresa">
-                        <Link className="footer__first" href="/mapalytics">mapalytics</Link>
+                        <div className="footer__first dropdown--novo">mapalytics</div>
                         <button className="footer__links" onClick={()=> showScroll("mapalytics", "apresentacao")}>apresentação</button>
                         <button className="footer__links" onClick={()=> showScroll("mapalytics", "oquee")}>o que é o mapalytics</button>
                         <button className="footer__links" onClick={()=> showScroll("mapalytics", "segmentos")}>segmentos atendidos</button>
@@ -97,7 +67,12 @@ export const Footer = (props: any) => {
            
             <div className="footer__bottom">
                 <div className="footer__bottom--items">
-                    {rodape}
+                    <Link className="dm-footer__mapalytics" href='https://datamachina.com.br'>
+                        <img className="footer__logo--dm" src="./dm.svg" alt="" />
+                    </Link>
+                    <div className="dm-footer__mapalytics map-footer--after">
+                        <img className='footer__mapalytics--logo' src="./mapalyticsbranco.svg" alt="" />
+                    </div>
                 </div>
                 <div className="footer__bottom--items">
                     <p>Data Machina - 2024</p>

@@ -61,10 +61,14 @@ export const Footer = (props: any) => {
                             <img src="./icones/youtube.svg" alt="" />
                         </a>
                     </div>
-                    <a className="footer__button--border" href='https://drive.google.com/drive/folders/1JROi6IP1GcIUxz8vNDe-Pk0SZtx0Kcdd?usp=sharing' target='_black'>material de imprensa</a>
+                    <div className="footer__pdfs">
+                      <a className="footer__button--border" href='https://drive.google.com/drive/folders/1JROi6IP1GcIUxz8vNDe-Pk0SZtx0Kcdd?usp=sharing' target='_black'>material de imprensa</a>
+                      <a className="footer__button--border" href='/politica_de_privacidade_dm.pdf' target='_black'>política de privacidade</a>
+                      <button className="footer__p">dpo@datamachina.com.br</button>
+                    </div>
                 </div>
             </div>
-           
+
             <div className="footer__bottom">
                 <div className="footer__bottom--items">
                     <Link className="dm-footer__mapalytics" href='https://datamachina.com.br'>
@@ -75,7 +79,7 @@ export const Footer = (props: any) => {
                     </div>
                 </div>
                 <div className="footer__bottom--items">
-                    <p>Data Machina - 2024</p>
+                    <p>Data Machina - { new Date().getFullYear() }</p>
                     <a href="http://tre.art.br/" target="black">
                         <img className="footer__tre" src="./tre.svg" alt="" />
                     </a>
